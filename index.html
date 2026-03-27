@@ -18,6 +18,13 @@
       --warning: #f59e0b;
       --shadow: 0 12px 30px rgba(35, 71, 161, 0.12);
       --radius: 22px;
+      --radius-lg: 28px;
+      --shadow-lg: 0 22px 60px rgba(15, 23, 42, 0.16);
+      --shadow-soft: 0 14px 28px rgba(35, 71, 161, 0.10);
+      --focus: rgba(90, 166, 255, 0.28);
+      --glass: rgba(255,255,255,0.70);
+      --glass-2: rgba(255,255,255,0.86);
+      --ink: rgba(15, 23, 42, 0.92);
     }
 
     * {
@@ -36,6 +43,17 @@
         radial-gradient(circle at top right, rgba(35,71,161,0.12), transparent 30%),
         linear-gradient(180deg, #f8fbff 0%, #eef3fb 100%);
       color: var(--text);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    :focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px var(--focus);
+      border-radius: 14px;
     }
 
     a {
@@ -168,6 +186,10 @@
 
     .btn:hover {
       transform: translateY(-2px);
+    }
+
+    .btn:active {
+      transform: translateY(0);
     }
 
     .hero-card {
@@ -346,25 +368,324 @@
     }
 
     .map-box {
-      min-height: 520px;
+      min-height: 0;
       position: relative;
       overflow: hidden;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.95)),
-        repeating-linear-gradient(
-          0deg,
-          rgba(35,71,161,0.05),
-          rgba(35,71,161,0.05) 1px,
-          transparent 1px,
-          transparent 52px
-        ),
-        repeating-linear-gradient(
-          90deg,
-          rgba(35,71,161,0.05),
-          rgba(35,71,161,0.05) 1px,
-          transparent 1px,
-          transparent 52px
-        );
+      background: linear-gradient(180deg, rgba(245, 248, 252, 0.95), rgba(255, 255, 255, 0.98));
+    }
+
+    .map-box-inner {
+      position: relative;
+      margin-top: 0;
+      border-radius: calc(var(--radius-lg) - 4px);
+      overflow: hidden;
+      border: 1px solid rgba(35, 71, 161, 0.12);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+      background: #e8eef6;
+      min-height: 280px;
+    }
+
+    .campus-map-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      vertical-align: top;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .map-hotspot {
+      position: absolute;
+      min-width: 30px;
+      min-height: 28px;
+      padding: 0 7px;
+      border-radius: 9px;
+      border: 2px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.24);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      font-family: inherit;
+      line-height: 1;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+    }
+
+    .map-hotspot:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+      box-shadow: 0 6px 22px rgba(15, 23, 42, 0.3);
+      filter: brightness(1.08);
+    }
+
+    .map-hotspot:focus-visible {
+      outline: 3px solid rgba(90, 166, 255, 0.9);
+      outline-offset: 3px;
+    }
+
+    .map-hotspot:active {
+      transform: translate(-50%, -50%) scale(1.03);
+    }
+
+    .map-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .map-tab {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--primary-dark);
+      font-size: 14px;
+      font-weight: 700;
+      font-family: inherit;
+      padding: 10px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .map-tab:hover {
+      border-color: rgba(35, 71, 161, 0.28);
+      box-shadow: 0 8px 20px rgba(35, 71, 161, 0.08);
+    }
+
+    .map-tab[aria-selected="true"] {
+      background: linear-gradient(135deg, var(--primary), #1e3a8a);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 10px 24px rgba(35, 71, 161, 0.22);
+    }
+
+    .map-tab:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px var(--focus);
+    }
+
+    .map-tab-panel[hidden] {
+      display: none !important;
+    }
+
+    .gaode-map-host {
+      width: 100%;
+      height: clamp(320px, 42vh, 520px);
+      border-radius: calc(var(--radius-lg) - 6px);
+      overflow: hidden;
+      border: 1px solid rgba(35, 71, 161, 0.12);
+      background: #dfe7f2;
+      z-index: 0;
+    }
+
+    .gaode-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .gaode-status {
+      font-size: 13px;
+      color: var(--muted);
+      flex: 1;
+      min-width: 140px;
+    }
+
+    /* Campus photo carousel (high-fidelity) */
+    .carousel-card {
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.92));
+    }
+
+    .carousel {
+      position: relative;
+      border-radius: calc(var(--radius-lg) + 2px);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.92);
+      box-shadow: var(--shadow-soft);
+      background: rgba(255,255,255,0.9);
+    }
+
+    .carousel-viewport {
+      width: 100%;
+      height: clamp(220px, 35vw, 420px);
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform 520ms cubic-bezier(.2,.85,.2,1);
+      will-change: transform;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      height: 100%;
+      position: relative;
+      background: linear-gradient(135deg, rgba(35,71,161,0.10), rgba(90,166,255,0.16));
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.02) contrast(1.02);
+    }
+
+    .carousel-overlay {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 14px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 14px;
+      pointer-events: none;
+    }
+
+    .carousel-caption {
+      pointer-events: none;
+      padding: 12px 14px;
+      border-radius: 18px;
+      background: color-mix(in srgb, rgba(15, 23, 42, 0.70) 72%, transparent);
+      color: rgba(255,255,255,0.94);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.12);
+      max-width: min(560px, 78%);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.18);
+    }
+
+    .carousel-caption strong {
+      display: block;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+      margin-bottom: 3px;
+    }
+
+    .carousel-caption small {
+      display: block;
+      font-size: 12px;
+      opacity: 0.92;
+      line-height: 1.55;
+    }
+
+    .carousel-controls {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .carousel-btn {
+      pointer-events: auto;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.32);
+      background: color-mix(in srgb, rgba(15, 23, 42, 0.52) 72%, transparent);
+      color: rgba(255,255,255,0.95);
+      backdrop-filter: blur(14px);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+      box-shadow: 0 14px 24px rgba(15, 23, 42, 0.18);
+    }
+
+    .carousel-btn:hover {
+      transform: translateY(-50%) scale(1.02);
+      border-color: rgba(255,255,255,0.55);
+      background: color-mix(in srgb, rgba(15, 23, 42, 0.62) 72%, transparent);
+    }
+
+    .carousel-btn:active {
+      transform: translateY(-50%) scale(0.98);
+    }
+
+    .carousel-btn.prev { left: 12px; }
+    .carousel-btn.next { right: 12px; }
+
+    .carousel-dots {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      top: 14px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      pointer-events: none;
+    }
+
+    .carousel-dots .bar {
+      flex: 1;
+      height: 4px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.22);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .carousel-dots .bar > i {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: rgba(255,255,255,0.88);
+      border-radius: 999px;
+      transition: width 520ms cubic-bezier(.2,.85,.2,1);
+    }
+
+    .carousel-meta {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .carousel-thumbs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .thumb {
+      width: 62px;
+      height: 44px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(35, 71, 161, 0.18);
+      background: rgba(255,255,255,0.9);
+      cursor: pointer;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .thumb[aria-current="true"] {
+      border-color: rgba(35, 71, 161, 0.38);
+      box-shadow: 0 10px 18px rgba(35, 71, 161, 0.14);
+      transform: translateY(-1px);
+    }
+
+    .carousel-hint {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
     }
 
     .map-title {
@@ -396,6 +717,18 @@
       width: 84px;
       text-align: center;
       transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+
+    .stop-btn {
+      width: 100%;
+      border: none;
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+      text-align: center;
+      color: inherit;
+      font-family: inherit;
     }
 
     .dot {
@@ -405,6 +738,16 @@
       background: linear-gradient(135deg, var(--primary), var(--accent));
       margin: 0 auto 8px;
       box-shadow: 0 0 0 8px rgba(90,166,255,0.14);
+    }
+
+    .stop-btn:hover .dot {
+      box-shadow: 0 0 0 10px rgba(90,166,255,0.18);
+      transform: translateY(-1px);
+      transition: 0.2s ease;
+    }
+
+    .stop-btn:active .dot {
+      transform: translateY(0);
     }
 
     .stop-dot strong {
@@ -417,6 +760,39 @@
     .stop-dot small {
       color: var(--muted);
       font-size: 11px;
+    }
+
+    .detail-story-wrap {
+      margin: 14px 0 0;
+      padding-top: 14px;
+      border-top: 1px dashed rgba(35, 71, 161, 0.18);
+    }
+
+    .detail-story-wrap[hidden] {
+      display: none !important;
+    }
+
+    .detail-h {
+      margin: 0 0 8px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--primary-dark);
+      opacity: 0.85;
+    }
+
+    .detail-story {
+      margin-top: 0;
+    }
+
+    .modal-subtitle {
+      display: block;
+      margin-top: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.02em;
     }
 
     .path-line {
@@ -629,6 +1005,206 @@
       font-size: 14px;
     }
 
+    /* Location detail modal (high-fidelity) */
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 72px 16px 16px;
+      background: rgba(15, 23, 42, 0.42);
+      z-index: 3000;
+    }
+
+    .modal[aria-hidden="false"] {
+      display: flex;
+    }
+
+    .modal-panel {
+      width: min(920px, 100%);
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,0.22);
+      background: linear-gradient(180deg, var(--glass), var(--glass-2));
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      backdrop-filter: blur(18px);
+      transform: translateY(10px);
+      opacity: 0;
+      animation: modalIn 220ms ease forwards;
+    }
+
+    @keyframes modalIn {
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(35, 71, 161, 0.12);
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(18px);
+    }
+
+    .modal-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .modal-title > div {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .modal-title strong {
+      font-size: 16px;
+      letter-spacing: -0.01em;
+      color: var(--primary-dark);
+      line-height: 1.3;
+      white-space: normal;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      border: 1px solid rgba(35, 71, 161, 0.14);
+      background: rgba(35, 71, 161, 0.06);
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 36px;
+      padding: 0 12px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(35, 71, 161, 0.14);
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      user-select: none;
+    }
+
+    .icon-btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(35, 71, 161, 0.26);
+    }
+
+    .icon-btn:active { transform: translateY(0); }
+
+    .modal-body {
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 16px;
+    }
+
+    .modal-media {
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(35, 71, 161, 0.12);
+      background: rgba(255,255,255,0.84);
+      box-shadow: 0 12px 22px rgba(35, 71, 161, 0.10);
+    }
+
+    .modal-media .carousel-viewport {
+      height: 320px;
+    }
+
+    .detail-card {
+      border-radius: 22px;
+      border: 1px solid rgba(35, 71, 161, 0.12);
+      background: rgba(255,255,255,0.78);
+      box-shadow: 0 12px 22px rgba(35, 71, 161, 0.10);
+      padding: 16px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .detail-sub {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .kv {
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(35, 71, 161, 0.06);
+      border: 1px solid rgba(35, 71, 161, 0.10);
+    }
+
+    .kv small {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .kv strong {
+      display: block;
+      font-size: 14px;
+      color: var(--primary-dark);
+    }
+
+    .tag-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(35, 71, 161, 0.14);
+      color: var(--primary-dark);
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(35, 71, 161, 0.26);
+    }
+
+    @media (max-width: 980px) {
+      .modal-body {
+        grid-template-columns: 1fr;
+      }
+      .modal-media .carousel-viewport {
+        height: 280px;
+      }
+    }
+
     ul {
       padding-left: 18px;
       margin: 0;
@@ -652,8 +1228,10 @@
         grid-template-columns: 1fr;
       }
 
-      .map-box {
-        min-height: 430px;
+      .map-hotspot {
+        min-width: 34px;
+        min-height: 32px;
+        font-size: 12px;
       }
     }
 
@@ -825,14 +1403,16 @@
         <div class="team-grid">
           <!-- 成员 1：Jiayi Chu -->
           <div class="member-card">
-             <img class="member-avatar" src="cjy/cjy.jpg" alt="Jiayi Chu">
-
+            <!-- TODO: 将此占位替换为 Jiayi Chu 的个人照片（建议 1:1 方形头像），或在此处插入 <img> 标签 -->
+            <div class="member-avatar">
+              在此替换为<br>Jiayi Chu 头像
+            </div>
             <div class="member-name">Jiayi Chu</div>
             <!-- TODO: 在下面填写对应学号，例如 “Student ID: 123456789” -->
-            <div class="member-meta">Student ID: 2361209</div>
+            <div class="member-meta">Student ID: （在此填写 Jiayi Chu 的学号）</div>
             <!-- TODO: 在下面两三句话中介绍个人角色、技能或在本项目中的主要负责内容 -->
             <div class="member-note">
-              I am a third-year student and major in information and computing science.
+              在此用 2–3 句话简要介绍 Jiayi 在项目中的角色（例如：交互设计 / 原型制作 / 用户研究），以及你想强调的个人特长。
             </div>
           </div>
 
@@ -956,53 +1536,99 @@
           </div>
         </div>
 
+        <div class="card carousel-card" style="margin-bottom:18px;">
+          <div class="map-title" style="margin-bottom:12px;">
+            <div>
+              <h3 style="margin:0 0 6px;color:#17316f;">真实校园照片轮播</h3>
+              <p style="margin:0;color:#6b7280;">用于高保真展示：把你们拍摄的校园照片放进来，自动轮播 + 可点击缩略图切换。</p>
+            </div>
+            <div class="legend">
+              <span>📷 Real Photos</span>
+              <span>✨ Figma-style</span>
+              <span>🧩 Replaceable</span>
+            </div>
+          </div>
+
+          <div class="carousel" id="campus-carousel" aria-roledescription="carousel" aria-label="校园照片轮播">
+            <div class="carousel-dots" id="campus-carousel-bars" aria-hidden="true"></div>
+            <div class="carousel-viewport">
+              <div class="carousel-track" id="campus-carousel-track"></div>
+            </div>
+            <div class="carousel-controls" aria-hidden="false">
+              <button class="carousel-btn prev" type="button" id="campus-carousel-prev" aria-label="上一张">‹</button>
+              <button class="carousel-btn next" type="button" id="campus-carousel-next" aria-label="下一张">›</button>
+            </div>
+          </div>
+
+          <div class="carousel-meta">
+            <div class="carousel-thumbs" id="campus-carousel-thumbs" aria-label="轮播缩略图"></div>
+            <div class="carousel-hint">
+              <!-- TODO: 将你们的真实校园图片放到项目目录里（例如：CPT208/assets/campus/xxx.jpg），然后在下方 JS 的 CAMPUS_PHOTOS 数组里替换路径即可 -->
+              支持本地图片路径或线上图片 URL；建议统一 \(16:9\) 或更宽比例，观感更像 Figma 高保真稿。
+            </div>
+          </div>
+        </div>
+
         <div class="route-layout">
           <div class="card map-box">
             <div class="map-title">
               <div>
                 <h3 style="margin:0 0 6px;color:#17316f;">Campus Map Preview</h3>
-                <p style="margin:0;color:#6b7280;">点击右侧路线卡，可在实际项目中切换地图高亮与打卡点信息。</p>
+                <p style="margin:0;color:#6b7280;">「校园示意图」点击楼栋代号查看详情；「实时定位地图」使用 Leaflet + OpenStreetMap，点「定位到我」开启 GPS 持续跟踪。示意图热点可微调各按钮的 left / top 百分比。</p>
               </div>
               <div class="legend">
-                <span>📍 Landmark</span>
-                <span>🎮 Task Point</span>
-                <span>🚌 Service Area</span>
+                <span>🏛️ 楼栋热点</span>
+                <span>🖼️ 近景轮播</span>
+                <span>📖 故事弹窗</span>
+                <span>📍 高德定位</span>
               </div>
             </div>
 
-            <div class="path-line" style="left:20%; top:24%; width:28%; transform:rotate(18deg);"></div>
-            <div class="path-line" style="left:46%; top:33%; width:24%; transform:rotate(52deg);"></div>
-            <div class="path-line" style="left:61%; top:57%; width:18%; transform:rotate(-18deg);"></div>
+            <div class="map-tabs" role="tablist" aria-label="地图视图">
+              <button type="button" class="map-tab" role="tab" id="map-tab-illustrated" aria-selected="true" aria-controls="map-panel-illustrated" data-map-tab="illustrated">校园示意图</button>
+              <button type="button" class="map-tab" role="tab" id="map-tab-live" aria-selected="false" aria-controls="map-panel-live" data-map-tab="live">实时定位地图</button>
+            </div>
 
-            <div class="stop-dot" style="left:20%; top:24%;">
-              <div class="dot"></div>
-              <strong>North Gate</strong>
-              <small>Entry</small>
+            <div class="map-tab-panel" id="map-panel-illustrated" role="tabpanel" aria-labelledby="map-tab-illustrated" data-map-panel="illustrated">
+            <div class="map-box-inner" id="campus-map-stage">
+              <img class="campus-map-img" src="assets/campus-map.png" alt="西交利物浦大学校园地图" loading="lazy" />
+              <!-- 坐标为相对地图容器的百分比；请对照你的底图微调 left / top -->
+              <button type="button" class="map-hotspot location-trigger" data-location="ls" style="left:32%; top:22%; background:#2d8f47;" aria-label="生命科学楼 LS">LS</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="fb" style="left:41%; top:42%; background:#5ba3d4;" aria-label="基础楼 FB">FB</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="cb" style="left:42%; top:56%; background:#17316f;" aria-label="中心楼 CB">CB</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="sa" style="left:54%; top:51%; background:#6abf69;" aria-label="理科楼 A SA">SA</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="sb" style="left:54%; top:55%; background:#6abf69;" aria-label="理科楼 B SB">SB</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="sc" style="left:54%; top:59%; background:#6abf69;" aria-label="理科楼 C SC">SC</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="sd" style="left:54%; top:63%; background:#6abf69;" aria-label="理科楼 D SD">SD</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="pb" style="left:61%; top:53%; background:#e8a23a;" aria-label="公共楼 PB">PB</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="ma" style="left:67%; top:53%; background:#7e57c2;" aria-label="数学楼 A MA">MA</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="mb" style="left:67%; top:57%; background:#7e57c2;" aria-label="数学楼 B MB">MB</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="ee" style="left:61%; top:63%; background:#26a69a;" aria-label="电子电气 EE">EE</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="eb" style="left:68%; top:61%; background:#3d8f5a;" aria-label="工科楼 EB">EB</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="ir" style="left:54%; top:73%; background:#c62828;" aria-label="国际科研中心 IR">IR</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="ia" style="left:63%; top:75%; background:#ef6c2a;" aria-label="国际学术交流中心 IA">IA</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="hs" style="left:63%; top:83%; background:#8d6e63;" aria-label="人文社科楼 HS">HS</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="es" style="left:53%; top:92%; background:#d84315;" aria-label="新兴科学楼 ES">ES</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="db" style="left:65%; top:90%; background:#795548;" aria-label="设计楼 DB">DB</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="bs" style="left:51%; top:83%; background:#c62828;" aria-label="西浦国际商学院 BS">BS</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="as" style="left:45%; top:71%; background:#f9a825;" aria-label="影视与创意科技楼 AS">AS</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="gym" style="left:73%; top:75%; background:#263238;" aria-label="体育馆 GYM">GYM</button>
             </div>
-            <div class="stop-dot" style="left:47%; top:34%;">
-              <div class="dot"></div>
-              <strong>Central Building</strong>
-              <small>Main Story</small>
             </div>
-            <div class="stop-dot" style="left:62%; top:58%;">
-              <div class="dot"></div>
-              <strong>Library</strong>
-              <small>Study Hub</small>
-            </div>
-            <div class="stop-dot" style="left:79%; top:51%;">
-              <div class="dot"></div>
-              <strong>Student Centre</strong>
-              <small>Events</small>
-            </div>
-            <div class="stop-dot" style="left:36%; top:73%;">
-              <div class="dot"></div>
-              <strong>Sports Area</strong>
-              <small>Finish</small>
+
+            <div class="map-tab-panel" id="map-panel-live" role="tabpanel" aria-labelledby="map-tab-live" data-map-panel="live" hidden>
+              <div id="amap-live-map" class="gaode-map-host" role="application" aria-label="高德实时地图"></div>
+              <div class="gaode-toolbar">
+                <button type="button" class="btn btn-primary" id="gaode-locate-btn" style="font-size:14px;padding:10px 18px;">定位到我</button>
+                <button type="button" class="btn btn-ghost" id="gaode-stop-btn" style="font-size:14px;padding:10px 18px;">停止跟踪</button>
+                <span class="gaode-status" id="gaode-status" aria-live="polite"></span>
+              </div>
+              <p class="small-note" style="margin:8px 0 0;">使用高德开放平台 Web 端 Key；请在控制台为该 Key 配置安全域名（白名单）。需 HTTPS 或 localhost 并允许定位。室内 GPS 可能偏差较大。</p>
             </div>
           </div>
 
           <div class="route-panel">
-            <div class="route-card active" onclick="selectRoute(this)">
+            <div class="route-card active" data-route="orientation" onclick="selectRoute(this)">
               <div class="route-top">
                 <h4>新生入门路线</h4>
                 <span>30 mins</span>
@@ -1015,7 +1641,7 @@
               </div>
             </div>
 
-            <div class="route-card" onclick="selectRoute(this)">
+            <div class="route-card" data-route="family" onclick="selectRoute(this)">
               <div class="route-top">
                 <h4>家长来访路线</h4>
                 <span>40 mins</span>
@@ -1028,7 +1654,7 @@
               </div>
             </div>
 
-            <div class="route-card" onclick="selectRoute(this)">
+            <div class="route-card" data-route="international" onclick="selectRoute(this)">
               <div class="route-top">
                 <h4>国际访客路线</h4>
                 <span>35 mins</span>
@@ -1041,7 +1667,7 @@
               </div>
             </div>
 
-            <div class="route-card" onclick="selectRoute(this)">
+            <div class="route-card" data-route="challenge" onclick="selectRoute(this)">
               <div class="route-top">
                 <h4>探索挑战路线</h4>
                 <span>50 mins</span>
@@ -1206,6 +1832,70 @@
     </div>
   </footer>
 
+  <!-- Location Detail Modal -->
+  <div class="modal" id="location-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="地点详情弹窗">
+    <div class="modal-panel" role="document">
+      <div class="modal-head">
+        <div class="modal-title">
+          <span class="pill" id="location-pill">📍 Landmark</span>
+          <div>
+            <strong id="location-title">Location</strong>
+            <span class="modal-subtitle" id="location-subtitle" hidden></span>
+          </div>
+        </div>
+        <button class="icon-btn" type="button" id="location-close" aria-label="关闭">Esc</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-media">
+          <div class="carousel" id="location-carousel" aria-roledescription="carousel" aria-label="地点图片轮播">
+            <div class="carousel-dots" id="location-carousel-bars" aria-hidden="true"></div>
+            <div class="carousel-viewport">
+              <div class="carousel-track" id="location-carousel-track"></div>
+            </div>
+            <div class="carousel-controls" aria-hidden="false">
+              <button class="carousel-btn prev" type="button" id="location-carousel-prev" aria-label="上一张">‹</button>
+              <button class="carousel-btn next" type="button" id="location-carousel-next" aria-label="下一张">›</button>
+            </div>
+          </div>
+        </div>
+        <div class="detail-card">
+          <div class="detail-sub" id="location-desc"></div>
+          <div class="detail-story-wrap" id="location-story-wrap" hidden>
+            <h4 class="detail-h">历史与故事</h4>
+            <div class="detail-sub detail-story" id="location-story"></div>
+          </div>
+          <div class="tag-row" id="location-tags"></div>
+          <div class="detail-grid">
+            <div class="kv">
+              <small>Best for</small>
+              <strong id="location-bestfor">-</strong>
+            </div>
+            <div class="kv">
+              <small>Suggested time</small>
+              <strong id="location-time">-</strong>
+            </div>
+            <div class="kv">
+              <small>Playful task</small>
+              <strong id="location-task">-</strong>
+            </div>
+            <div class="kv">
+              <small>Accessibility</small>
+              <strong id="location-access">-</strong>
+            </div>
+          </div>
+          <div class="cta-row">
+            <button class="btn btn-primary" type="button" id="location-primary">加入路线</button>
+            <button class="btn btn-ghost" type="button" id="location-secondary">开始打卡</button>
+          </div>
+          <div class="carousel-hint">
+            每张楼的近景图请在 JS 的 LOCATIONS 对应条目中填写 images；简介与「历史与故事」字段也可直接编辑。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://webapi.amap.com/loader.js"></script>
   <script>
     function selectRoute(card) {
       document.querySelectorAll('.route-card').forEach(item => item.classList.remove('active'));
@@ -1215,6 +1905,822 @@
     function showMessage() {
       alert('欢迎来到 XJTLU Campus Tour Guide！这里可以继续接入真实地图、地点详情、打卡系统和 AR 功能。');
     }
+
+    // ===== 高德地图 JS API 2.0 + 浏览器持续定位（非 Vue，等价于 vue-amap 的 initAMapApiLoader）=====
+    (function initGaodeLiveMap() {
+      const tabBtns = document.querySelectorAll(".map-tab[data-map-tab]");
+      const panelIllustrated = document.getElementById("map-panel-illustrated");
+      const panelLive = document.getElementById("map-panel-live");
+      const mapEl = document.getElementById("amap-live-map");
+      const locateBtn = document.getElementById("gaode-locate-btn");
+      const stopBtn = document.getElementById("gaode-stop-btn");
+      const statusEl = document.getElementById("gaode-status");
+
+      if (!mapEl || !panelIllustrated || !panelLive || !tabBtns.length) return;
+
+      /** 与 vue-amap 示例一致：Web 端 Key（请在控制台配置域名白名单） */
+      const AMAP_KEY = "02332cfe64855700a771507dc314725a";
+      /** 西浦独墅湖校区大致中心 [lng, lat] */
+      const XJTLU_CENTER_LNGLAT = [120.7415, 31.2718];
+      const DEFAULT_ZOOM = 16;
+
+      let AMapRef = null;
+      let map = null;
+      let userMarker = null;
+      let accuracyCircle = null;
+      let watchId = null;
+      let hasFirstFix = false;
+      let loadPromise = null;
+
+      function setStatus(msg) {
+        if (statusEl) statusEl.textContent = msg || "";
+      }
+
+      function loadAmapApi() {
+        if (loadPromise) return loadPromise;
+        if (typeof AMapLoader === "undefined") {
+          return Promise.reject(new Error("未加载 AMapLoader（请检查 loader.js）"));
+        }
+        loadPromise = AMapLoader.load({
+          key: AMAP_KEY,
+          version: "2.0",
+          plugins: ["AMap.Geolocation", "AMap.Scale", "AMap.ToolBar"]
+        });
+        return loadPromise;
+      }
+
+      function initMap(AMap) {
+        if (map) return;
+        AMapRef = AMap;
+        map = new AMap.Map("amap-live-map", {
+          zoom: DEFAULT_ZOOM,
+          center: XJTLU_CENTER_LNGLAT,
+          viewMode: "2D"
+        });
+        new AMap.Marker({
+          map,
+          position: XJTLU_CENTER_LNGLAT,
+          title: "西交利物浦大学 · 参考位置"
+        });
+        map.addControl(new AMap.Scale());
+        map.addControl(new AMap.ToolBar({ position: "RT" }));
+      }
+
+      function applyGcjPosition(lngLat, accM) {
+        if (!map || !AMapRef) return;
+        const m = Math.max(Number(accM) || 0, 5);
+        if (userMarker && accuracyCircle) {
+          userMarker.setPosition(lngLat);
+          accuracyCircle.setCenter(lngLat);
+          accuracyCircle.setRadius(m);
+        } else {
+          userMarker = new AMap.CircleMarker({
+            map,
+            center: lngLat,
+            radius: 8,
+            strokeColor: "#17316f",
+            strokeWeight: 2,
+            fillColor: "#5aa6ff",
+            fillOpacity: 0.95,
+            zIndex: 200
+          });
+          accuracyCircle = new AMap.Circle({
+            map,
+            center: lngLat,
+            radius: m,
+            strokeColor: "#5aa6ff",
+            strokeOpacity: 0.45,
+            fillColor: "#5aa6ff",
+            fillOpacity: 0.12,
+            zIndex: 100
+          });
+        }
+        if (!hasFirstFix) {
+          map.setZoomAndCenter(Math.max(map.getZoom(), 17), lngLat);
+          hasFirstFix = true;
+        } else {
+          map.panTo(lngLat, { duration: 0 });
+        }
+        setStatus(`实时位置 · 精度约 ${Math.round(m)} m（高德坐标）`);
+      }
+
+      function convertWgs84ThenApply(lng, lat, accuracy) {
+        const AMap = AMapRef;
+        if (!AMap) return;
+        if (typeof AMap.convertFrom === "function") {
+          AMap.convertFrom([lng, lat], "gps", function (status, result) {
+            if (result && result.info === "ok" && result.locations && result.locations.length) {
+              applyGcjPosition(result.locations[0], accuracy);
+            } else {
+              applyGcjPosition(new AMap.LngLat(lng, lat), accuracy);
+            }
+          });
+        } else {
+          applyGcjPosition(new AMap.LngLat(lng, lat), accuracy);
+        }
+      }
+
+      function onGeoSuccess(pos) {
+        const { latitude, longitude, accuracy } = pos.coords;
+        convertWgs84ThenApply(longitude, latitude, accuracy);
+      }
+
+      function onGeoError(err) {
+        const code = err && err.code;
+        const msg =
+          code === 1 ? "已拒绝定位权限，请在浏览器设置中允许本站使用位置。" :
+          code === 2 ? "暂时无法获取位置（设备或信号问题）。" :
+          code === 3 ? "定位超时，请到室外重试或检查权限。" :
+          "无法获取位置。";
+        setStatus(msg);
+      }
+
+      function stopWatch() {
+        if (watchId != null) {
+          navigator.geolocation.clearWatch(watchId);
+          watchId = null;
+        }
+        hasFirstFix = false;
+        setStatus("已停止跟踪");
+      }
+
+      function startWatch() {
+        if (!navigator.geolocation) {
+          setStatus("当前浏览器不支持地理定位。");
+          return;
+        }
+        if (!map || !AMapRef) return;
+        if (watchId != null) navigator.geolocation.clearWatch(watchId);
+        hasFirstFix = false;
+        watchId = navigator.geolocation.watchPosition(onGeoSuccess, onGeoError, {
+          enableHighAccuracy: true,
+          maximumAge: 0,
+          timeout: 25000
+        });
+        setStatus("正在持续定位…");
+      }
+
+      function ensureMapThen(fn) {
+        loadAmapApi()
+          .then((AMap) => {
+            initMap(AMap);
+            fn();
+          })
+          .catch((e) => {
+            console.warn(e);
+            setStatus("高德地图加载失败，请检查 Key、网络与控制台域名配置。");
+          });
+      }
+
+      locateBtn?.addEventListener("click", () => {
+        ensureMapThen(() => startWatch());
+      });
+
+      stopBtn?.addEventListener("click", () => {
+        stopWatch();
+      });
+
+      tabBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const name = btn.getAttribute("data-map-tab");
+          tabBtns.forEach((b) => {
+            const on = b.getAttribute("data-map-tab") === name;
+            b.setAttribute("aria-selected", on ? "true" : "false");
+          });
+          if (name === "illustrated") {
+            panelIllustrated.hidden = false;
+            panelLive.hidden = true;
+            stopWatch();
+          } else if (name === "live") {
+            panelIllustrated.hidden = true;
+            panelLive.hidden = false;
+            ensureMapThen(() => {
+              window.setTimeout(() => {
+                map?.resize();
+              }, 120);
+            });
+          }
+        });
+      });
+    })();
+
+    // ===== High-fidelity data (replace images here) =====
+    // TODO: 把你们的真实校园照片放到项目目录里（例如：CPT208/assets/campus/xxx.jpg），并替换下面的 src 路径。
+    // 你也可以直接用线上 URL，但线下展示更建议本地资源，避免网络问题。
+    const CAMPUS_PHOTOS = [
+      {
+        src: "assets/campus/central-building-1.jpg", // TODO: 替换为真实照片路径
+        title: "Central Building · Campus Story",
+        note: "建议放一张能体现校园“第一眼印象”的建筑外观照片。",
+        alt: "Central Building photo"
+      },
+      {
+        src: "assets/campus/library-1.jpg", // TODO: 替换为真实照片路径
+        title: "Library · Study Hub",
+        note: "可用图书馆外观或学习区环境照，强调氛围与功能。",
+        alt: "Library photo"
+      },
+      {
+        src: "assets/campus/student-centre-1.jpg", // TODO: 替换为真实照片路径
+        title: "Student Centre · Events & Food",
+        note: "适合用人流/活动/餐饮等生活化场景照片。",
+        alt: "Student Centre photo"
+      },
+      {
+        src: "assets/campus/sports-area-1.jpg", // TODO: 替换为真实照片路径
+        title: "Sports Area · Finish Reward",
+        note: "建议用运动场地的广角，作为“挑战路线”收尾画面。",
+        alt: "Sports Area photo"
+      }
+    ];
+
+    // 校园地图楼栋：images 请替换为你们拍摄的近景路径（assets/locations/楼栋代号-序号.jpg）
+    const LOCATIONS = {
+      ls: {
+        id: "ls",
+        type: "📍 北校区",
+        title: "Life Sciences Building",
+        subtitle: "生命科学楼",
+        desc: "北校区科研与实验教学的重要空间，常承载生命科学相关课程与实验室动线。",
+        story: "可在此写入该楼落成背景、命名由来或一届届学生在这里发生的趣事。",
+        tags: ["Lab", "North Campus", "Science"],
+        bestFor: "理工实验课 · 科研参观",
+        time: "5–8 分钟",
+        task: "找到一层导览牌并拍照打卡",
+        access: "请按实地无障碍设施填写",
+        images: [
+          { src: "assets/locations/ls-1.jpg", alt: "生命科学楼" },
+          { src: "assets/locations/ls-2.jpg", alt: "生命科学楼近景" }
+        ]
+      },
+      fb: {
+        id: "fb",
+        type: "📍 中校区",
+        title: "Foundation Building",
+        subtitle: "基础楼",
+        desc: "面向全校的基础课与公共教学空间之一，是许多同学大一、大二课程的“起点楼”。",
+        story: "适合写：通识课回忆、清晨赶课的人流、与草坪/中轴线的视觉关系等校园记忆。",
+        tags: ["Teaching", "Core Courses", "Landmark"],
+        bestFor: "新生 · 基础课导航",
+        time: "5–10 分钟",
+        task: "在楼前拍一张“开学第一天”风格照片",
+        access: "请按实地无障碍设施填写",
+        images: [
+          { src: "assets/locations/fb-1.jpg", alt: "基础楼" },
+          { src: "assets/locations/fb-2.jpg", alt: "基础楼入口" }
+        ]
+      },
+      cb: {
+        id: "cb",
+        type: "📍 Landmark",
+        title: "Central Building",
+        subtitle: "中心楼",
+        desc: "校园最具辨识度的建筑之一，形似“H”的体量常作为宣传册与访客的视觉锚点。",
+        story: "可讲述：设计概念、中庭与连廊的使用方式、重大活动或展览曾在此举办的故事。",
+        tags: ["Iconic", "Campus Story", "Photo Spot"],
+        bestFor: "全体访客 · 校园叙事主线",
+        time: "8–12 分钟",
+        task: "回答一题与中心楼相关的小知识并盖章",
+        access: "电梯/坡道（请核实）",
+        images: [
+          { src: "assets/locations/cb-1.jpg", alt: "中心楼" },
+          { src: "assets/locations/cb-2.jpg", alt: "中心楼中庭" },
+          { src: "assets/locations/cb-3.jpg", alt: "中心楼细节" }
+        ]
+      },
+      sa: {
+        id: "sa",
+        type: "📍 理科组团",
+        title: "Science Building A",
+        subtitle: "理科楼 A",
+        desc: "理科楼组团之一，与下沉广场及周边动线共同构成中校区学习核心区。",
+        story: "可写理科楼组团分期建设、课程分布或某门“传说课程”的梗。",
+        tags: ["Science", "Cluster A"],
+        bestFor: "理工专业课",
+        time: "5–8 分钟",
+        task: "在下沉广场找到理科楼标识合影",
+        access: "请按实地填写",
+        images: [{ src: "assets/locations/sa-1.jpg", alt: "理科楼 A" }]
+      },
+      sb: {
+        id: "sb",
+        type: "📍 理科组团",
+        title: "Science Building B",
+        subtitle: "理科楼 B",
+        desc: "理科楼组团之一，步行连接相邻楼宇与公共活动区。",
+        story: "",
+        tags: ["Science", "Cluster B"],
+        bestFor: "实验与研讨课",
+        time: "5–8 分钟",
+        task: "记录一张走廊或楼梯间的光影照片",
+        access: "请按实地填写",
+        images: [{ src: "assets/locations/sb-1.jpg", alt: "理科楼 B" }]
+      },
+      sc: {
+        id: "sc",
+        type: "📍 理科组团",
+        title: "Science Building C",
+        subtitle: "理科楼 C",
+        desc: "理科楼组团之一，适合作为路线中的中段停留点。",
+        story: "",
+        tags: ["Science", "Cluster C"],
+        bestFor: "小组讨论 · 自习转场",
+        time: "5–8 分钟",
+        task: "找到一个教室门牌并朗读课程名（趣味向）",
+        access: "请按实地填写",
+        images: [{ src: "assets/locations/sc-1.jpg", alt: "理科楼 C" }]
+      },
+      sd: {
+        id: "sd",
+        type: "📍 理科组团",
+        title: "Science Building D",
+        subtitle: "理科楼 D",
+        desc: "理科楼组团最南端一栋，靠近工科与广场一侧。",
+        story: "",
+        tags: ["Science", "Cluster D"],
+        bestFor: "跨楼动线",
+        time: "5–8 分钟",
+        task: "从 SA 步行到 SD 计时截图（轻量挑战）",
+        access: "请按实地填写",
+        images: [{ src: "assets/locations/sd-1.jpg", alt: "理科楼 D" }]
+      },
+      pb: {
+        id: "pb",
+        type: "📍 公共服务",
+        title: "Public Building",
+        subtitle: "公共楼",
+        desc: "面向全校的公共服务与活动空间之一，可承载讲座、会议与跨学科交流。",
+        story: "可写：曾在此举办的公开讲座、开放日或社团招新场景。",
+        tags: ["Public", "Events", "Services"],
+        bestFor: "家长参观 · 活动资讯",
+        time: "6–10 分钟",
+        task: "浏览一层公告栏并记下一场活动",
+        access: "请按实地填写",
+        images: [
+          { src: "assets/locations/pb-1.jpg", alt: "公共楼" },
+          { src: "assets/locations/pb-2.jpg", alt: "公共楼内景" }
+        ]
+      },
+      ma: {
+        id: "ma",
+        type: "📍 数学系馆",
+        title: "Mathematics Building A",
+        subtitle: "数学楼 A",
+        desc: "数学相关课程与学术支持的重要楼宇之一。",
+        story: "",
+        tags: ["Math", "Academic"],
+        bestFor: "数学/统计课程",
+        time: "5–8 分钟",
+        task: "在黑板或屏幕前拍一张“公式氛围感”照片",
+        access: "请按实地填写",
+        images: [{ src: "assets/locations/ma-1.jpg", alt: "数学楼 A" }]
+      },
+      mb: {
+        id: "mb",
+        type: "📍 数学系馆",
+        title: "Mathematics Building B",
+        subtitle: "数学楼 B",
+        desc: "与数学楼 A 形成组团，便于跨教室动线。",
+        story: "",
+        tags: ["Math", "Academic"],
+        bestFor: "研讨课 · 答疑",
+        time: "5–8 分钟",
+        task: "与同学完成一道心算小挑战",
+        access: "请按实地填写",
+        images: [{ src: "assets/locations/mb-1.jpg", alt: "数学楼 B" }]
+      },
+      ee: {
+        id: "ee",
+        type: "📍 工科",
+        title: "Electrical & Electronic Engineering",
+        subtitle: "电子与电气工程楼",
+        desc: "电子电气学科的教学、实验与创新项目空间。",
+        story: "可写实验室安全文化、竞赛作品展示或某届毕业设计展。",
+        tags: ["EEE", "Lab", "Innovation"],
+        bestFor: "工科访学 · 实验室参观",
+        time: "8–12 分钟",
+        task: "找到一个“高压危险”或安全标识并简述含义",
+        access: "实验区需预约（请核实）",
+        images: [
+          { src: "assets/locations/ee-1.jpg", alt: "EE 楼" },
+          { src: "assets/locations/ee-2.jpg", alt: "实验室门口" }
+        ]
+      },
+      eb: {
+        id: "eb",
+        type: "📍 工科",
+        title: "Engineering Building",
+        subtitle: "工科楼",
+        desc: "综合工程学科空间，与周边广场形成强动线连接。",
+        story: "",
+        tags: ["Engineering", "Project-based"],
+        bestFor: "项目制课程 · 工坊",
+        time: "8–12 分钟",
+        task: "拍摄一张体现“动手做”的场景（需尊重隐私）",
+        access: "请按实地填写",
+        images: [{ src: "assets/locations/eb-1.jpg", alt: "工科楼" }]
+      },
+      ir: {
+        id: "ir",
+        type: "📍 南校区",
+        title: "International Research Centre",
+        subtitle: "国际科研中心",
+        desc: "面向科研合作与国际交流的功能性建筑，常承载课题组与访问学者动线。",
+        story: "可写国际合作项目、开放日或跨校联合研究的故事。",
+        tags: ["Research", "International"],
+        bestFor: "学术参观",
+        time: "6–10 分钟",
+        task: "记录一则楼内科研海报标题",
+        access: "部分楼层需权限（请核实）",
+        images: [{ src: "assets/locations/ir-1.jpg", alt: "国际科研中心" }]
+      },
+      ia: {
+        id: "ia",
+        type: "📍 南校区",
+        title: "Int'l Academic Exchange Centre",
+        subtitle: "国际学术交流中心",
+        desc: "承办会议、接待与跨文化学术活动的重要场所。",
+        story: "适合写国际会议、来访学者欢迎仪式或双语主持名场面。",
+        tags: ["Conference", "Bilingual", "Guests"],
+        bestFor: "国际访客 · 会议接待",
+        time: "6–10 分钟",
+        task: "用中英各说一句欢迎语并录音（可选）",
+        access: "请按实地填写",
+        images: [
+          { src: "assets/locations/ia-1.jpg", alt: "学术交流中心" },
+          { src: "assets/locations/ia-2.jpg", alt: "报告厅或门厅" }
+        ]
+      },
+      hs: {
+        id: "hs",
+        type: "📍 南校区",
+        title: "Humanities & Social Sciences",
+        subtitle: "人文社科楼",
+        desc: "人文与社会科学相关课程、研讨与跨学科项目的聚集地。",
+        story: "可写读书会、放映或辩论赛等人文学生活动。",
+        tags: ["Humanities", "Seminar", "Culture"],
+        bestFor: "人文类课程 · 深度阅读",
+        time: "6–10 分钟",
+        task: "找一本你感兴趣的“学科关键词”并分享",
+        access: "请按实地填写",
+        images: [{ src: "assets/locations/hs-1.jpg", alt: "人文社科楼" }]
+      },
+      es: {
+        id: "es",
+        type: "📍 南校区",
+        title: "Emerging & Interdisciplinary Science",
+        subtitle: "新兴科学楼",
+        desc: "新兴与交叉学科探索空间，强调跨领域协作。",
+        story: "",
+        tags: ["Interdisciplinary", "Future"],
+        bestFor: "交叉学科项目",
+        time: "6–10 分钟",
+        task: "写下两个你认为会交叉的学科名词",
+        access: "请按实地填写",
+        images: [{ src: "assets/locations/es-1.jpg", alt: "新兴科学楼" }]
+      },
+      db: {
+        id: "db",
+        type: "📍 南校区",
+        title: "Design Building",
+        subtitle: "设计楼",
+        desc: "设计学科的工作坊、展示与评图空间。",
+        story: "可写期末展、模型工坊熬夜与评图日的集体记忆。",
+        tags: ["Design", "Studio", "Exhibition"],
+        bestFor: "设计专业 · 作品展",
+        time: "8–14 分钟",
+        task: "拍摄一张模型/展板局部（需许可）",
+        access: "工作室区需遵守系馆规则",
+        images: [{ src: "assets/locations/db-1.jpg", alt: "设计楼" }]
+      },
+      bs: {
+        id: "bs",
+        type: "📍 南校区",
+        title: "International Business School Suzhou",
+        subtitle: "西浦国际商学院",
+        desc: "商学教育与案例教学的重要楼宇，连接产业与国际化课程。",
+        story: "可写商业竞赛、企业参访或校友分享会。",
+        tags: ["Business", "Case Study", "Career"],
+        bestFor: "商科学生 · 职业探索",
+        time: "8–12 分钟",
+        task: "列举一个你感兴趣的商科方向",
+        access: "请按实地填写",
+        images: [{ src: "assets/locations/bs-1.jpg", alt: "商学院" }]
+      },
+      as: {
+        id: "as",
+        type: "📍 南校区",
+        title: "Film & Creative Technology",
+        subtitle: "影视与创意科技楼",
+        desc: "影视、创意与科技融合教学的实践空间。",
+        story: "可写拍摄课、放映活动或设备借用的趣事。",
+        tags: ["Media", "Creative", "Studio"],
+        bestFor: "影视与创意类课程",
+        time: "8–12 分钟",
+        task: "用三句话描述一个你想拍的校园短片",
+        access: "设备间需授权（请核实）",
+        images: [{ src: "assets/locations/as-1.jpg", alt: "影视与创意科技楼" }]
+      },
+      gym: {
+        id: "gym",
+        type: "🎮 运动",
+        title: "Gymnasium",
+        subtitle: "体育馆",
+        desc: "大型室内运动与赛事空间，是校园体育文化与集体活动的重要载体。",
+        story: "可写新生杯、校队训练或某场逆转比赛。",
+        tags: ["Sports", "Events", "Wellness"],
+        bestFor: "运动 · 赛事观赛",
+        time: "20–40 分钟",
+        task: "完成一次入场打卡或计步挑战",
+        access: "请按场馆规定填写",
+        images: [
+          { src: "assets/locations/gym-1.jpg", alt: "体育馆外观" },
+          { src: "assets/locations/gym-2.jpg", alt: "体育馆内场" }
+        ]
+      }
+    };
+
+    function escapeHtml(s) {
+      return (s || "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#39;");
+    }
+
+    function createCarousel({ trackEl, barsEl, prevEl, nextEl, slides, caption = false }) {
+      if (!trackEl || !barsEl || !prevEl || !nextEl) return null;
+      const safeSlides = (slides || []).filter(Boolean);
+      if (!safeSlides.length) return null;
+
+      let index = 0;
+      let timer = null;
+      const intervalMs = 4200;
+      const listeners = new Set();
+
+      function render() {
+        trackEl.innerHTML = safeSlides.map((s) => {
+          const title = escapeHtml(s.title || "");
+          const note = escapeHtml(s.note || "");
+          const alt = escapeHtml(s.alt || s.title || "Campus photo");
+          const src = escapeHtml(s.src || "");
+          return `
+            <div class="carousel-slide">
+              <img src="${src}" alt="${alt}" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(35,71,161,0.12), rgba(90,166,255,0.20))'; this.parentElement.innerHTML += '<div style=&quot;position:absolute; inset:0; display:grid; place-items:center; padding:22px; text-align:center; color: rgba(15,23,42,0.76); font-weight:800; letter-spacing:-0.01em;&quot;>请在 JS 的图片配置里替换为真实校园照片</div>';" />
+              ${caption ? `
+                <div class="carousel-overlay">
+                  <div class="carousel-caption">
+                    <strong>${title}</strong>
+                    <small>${note}</small>
+                  </div>
+                </div>
+              ` : ""}
+            </div>
+          `;
+        }).join("");
+
+        barsEl.innerHTML = safeSlides.map(() => `<span class="bar"><i></i></span>`).join("");
+      }
+
+      function clampIndex(i) {
+        const n = safeSlides.length;
+        return (i % n + n) % n;
+      }
+
+      function setIndex(next, { animate = true } = {}) {
+        index = clampIndex(next);
+        trackEl.style.transition = animate ? "" : "none";
+        trackEl.style.transform = `translateX(${-index * 100}%)`;
+
+        const bars = Array.from(barsEl.querySelectorAll(".bar > i"));
+        bars.forEach((iEl, idx) => {
+          iEl.style.width = idx === index ? "100%" : "0%";
+        });
+
+        listeners.forEach((fn) => {
+          try { fn(index); } catch {}
+        });
+      }
+
+      function next() { setIndex(index + 1); }
+      function prev() { setIndex(index - 1); }
+
+      function start() {
+        stop();
+        timer = window.setInterval(next, intervalMs);
+      }
+
+      function stop() {
+        if (timer) window.clearInterval(timer);
+        timer = null;
+      }
+
+      render();
+      setIndex(0, { animate: false });
+      start();
+
+      prevEl.addEventListener("click", () => { prev(); start(); });
+      nextEl.addEventListener("click", () => { next(); start(); });
+
+      // pause on hover/focus
+      const root = trackEl.closest(".carousel");
+      root?.addEventListener("mouseenter", stop);
+      root?.addEventListener("mouseleave", start);
+      root?.addEventListener("focusin", stop);
+      root?.addEventListener("focusout", start);
+
+      // keyboard support
+      root?.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") { e.preventDefault(); prev(); start(); }
+        if (e.key === "ArrowRight") { e.preventDefault(); next(); start(); }
+      });
+
+      return {
+        get index() { return index; },
+        setIndex,
+        onChange(fn) { listeners.add(fn); return () => listeners.delete(fn); },
+        stop,
+        start,
+        slides: safeSlides
+      };
+    }
+
+    // ===== Campus carousel init =====
+    (function initCampusCarousel() {
+      const track = document.getElementById("campus-carousel-track");
+      const bars = document.getElementById("campus-carousel-bars");
+      const prev = document.getElementById("campus-carousel-prev");
+      const next = document.getElementById("campus-carousel-next");
+      const thumbs = document.getElementById("campus-carousel-thumbs");
+
+      const carousel = createCarousel({
+        trackEl: track,
+        barsEl: bars,
+        prevEl: prev,
+        nextEl: next,
+        slides: CAMPUS_PHOTOS,
+        caption: true
+      });
+      if (!carousel || !thumbs) return;
+
+      thumbs.innerHTML = carousel.slides.map((s, idx) => {
+        const alt = escapeHtml(s.alt || s.title || "thumb");
+        const src = escapeHtml(s.src || "");
+        return `
+          <button class="thumb" type="button" data-idx="${idx}" aria-current="${idx === 0 ? "true" : "false"}" aria-label="切换到第 ${idx + 1} 张">
+            <img src="${src}" alt="${alt}" loading="lazy" />
+          </button>
+        `;
+      }).join("");
+
+      function syncThumbs() {
+        thumbs.querySelectorAll(".thumb").forEach((btn, idx) => {
+          btn.setAttribute("aria-current", idx === carousel.index ? "true" : "false");
+        });
+      }
+
+      thumbs.addEventListener("click", (e) => {
+        const btn = e.target.closest(".thumb");
+        if (!btn) return;
+        const idx = Number(btn.getAttribute("data-idx") || "0");
+        carousel.setIndex(idx);
+        carousel.start();
+      });
+
+      carousel.onChange(syncThumbs);
+    })();
+
+    // ===== Location modal =====
+    (function initLocationModal() {
+      const modal = document.getElementById("location-modal");
+      const closeBtn = document.getElementById("location-close");
+      const pill = document.getElementById("location-pill");
+      const title = document.getElementById("location-title");
+      const subtitleEl = document.getElementById("location-subtitle");
+      const desc = document.getElementById("location-desc");
+      const storyWrap = document.getElementById("location-story-wrap");
+      const storyEl = document.getElementById("location-story");
+      const tags = document.getElementById("location-tags");
+      const bestFor = document.getElementById("location-bestfor");
+      const time = document.getElementById("location-time");
+      const task = document.getElementById("location-task");
+      const access = document.getElementById("location-access");
+      const primary = document.getElementById("location-primary");
+      const secondary = document.getElementById("location-secondary");
+
+      const track = document.getElementById("location-carousel-track");
+      const bars = document.getElementById("location-carousel-bars");
+      const prev = document.getElementById("location-carousel-prev");
+      const next = document.getElementById("location-carousel-next");
+
+      if (!modal || !closeBtn || !track || !bars || !prev || !next) return;
+
+      let activeId = null;
+      let lastActiveEl = null;
+      let carousel = null;
+
+      function setModal(open) {
+        modal.setAttribute("aria-hidden", open ? "false" : "true");
+        document.body.style.overflow = open ? "hidden" : "";
+        if (open) {
+          window.setTimeout(() => closeBtn.focus(), 0);
+        } else {
+          carousel?.stop?.();
+          carousel = null;
+          if (lastActiveEl && typeof lastActiveEl.focus === "function") lastActiveEl.focus();
+          lastActiveEl = null;
+        }
+      }
+
+      function openLocation(id, triggerEl) {
+        const data = LOCATIONS[id];
+        if (!data) return;
+        activeId = id;
+        lastActiveEl = triggerEl || document.activeElement;
+
+        pill.textContent = data.type || "📍 Landmark";
+        title.textContent = data.title || "Location";
+        if (subtitleEl) {
+          if (data.subtitle) {
+            subtitleEl.textContent = data.subtitle;
+            subtitleEl.removeAttribute("hidden");
+          } else {
+            subtitleEl.textContent = "";
+            subtitleEl.setAttribute("hidden", "");
+          }
+        }
+        desc.textContent = data.desc || "";
+        const storyText = (data.story || "").trim();
+        if (storyWrap && storyEl) {
+          if (storyText) {
+            storyWrap.hidden = false;
+            storyEl.textContent = storyText;
+          } else {
+            storyWrap.hidden = true;
+            storyEl.textContent = "";
+          }
+        }
+
+        tags.innerHTML = (data.tags || []).map(t => `<span class="pill">${escapeHtml(t)}</span>`).join("");
+        bestFor.textContent = data.bestFor || "-";
+        time.textContent = data.time || "-";
+        task.textContent = data.task || "-";
+        access.textContent = data.access || "-";
+
+        const slides = (data.images || []).map((img) => ({
+          src: img.src,
+          alt: img.alt || data.title || "Location photo",
+          title: data.title,
+          note: data.type
+        }));
+
+        carousel = createCarousel({
+          trackEl: track,
+          barsEl: bars,
+          prevEl: prev,
+          nextEl: next,
+          slides,
+          caption: false
+        });
+
+        setModal(true);
+      }
+
+      function close() { setModal(false); }
+
+      closeBtn.addEventListener("click", close);
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) close();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.getAttribute("aria-hidden") === "false") close();
+      });
+
+      document.querySelectorAll(".location-trigger[data-location]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-location");
+          openLocation(id, btn);
+        });
+      });
+
+      // route cards: open the "primary" location of that route (demo behavior)
+      const routeFirstStop = {
+        orientation: "cb",
+        family: "fb",
+        international: "ia",
+        challenge: "gym"
+      };
+      document.querySelectorAll(".route-card[data-route]").forEach((card) => {
+        card.addEventListener("dblclick", () => {
+          const r = card.getAttribute("data-route");
+          const id = routeFirstStop[r];
+          if (id) openLocation(id, card);
+        });
+      });
+
+      primary?.addEventListener("click", () => {
+        alert(`已将「${LOCATIONS[activeId]?.title || "该地点"}」加入当前路线（这里可接入真实路线状态管理）。`);
+      });
+      secondary?.addEventListener("click", () => {
+        alert(`开始打卡：${LOCATIONS[activeId]?.title || "该地点"}（这里可接入定位/二维码/AR 入口）。`);
+      });
+    })();
   </script>
 </body>
 </html>
