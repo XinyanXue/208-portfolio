@@ -363,9 +363,308 @@
 
     .route-layout {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 20px;
+      grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+      gap: 18px;
       align-items: start;
+    }
+
+    .route-expand-hint {
+      margin: 0;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px dashed rgba(35, 71, 161, 0.28);
+      background: rgba(35, 71, 161, 0.05);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* 路线「页面」：选路线 / 导览编辑，二选一显示 */
+    .route-view[hidden] {
+      display: none !important;
+    }
+
+    .route-tour-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+
+    .route-tour-theme-label {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .route-tour-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .route-view-tour .my-routes-aside {
+      position: static;
+      max-height: none;
+    }
+
+    .route-main-col {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .route-cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    @media (max-width: 1100px) {
+      .route-cards-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .route-card-custom {
+      margin-top: 4px;
+      border: 2px solid rgba(35, 71, 161, 0.35);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(90, 166, 255, 0.08));
+    }
+
+    .route-card-custom .route-top h4 {
+      font-size: 19px;
+    }
+
+    .route-card-custom .meta b {
+      background: rgba(35, 71, 161, 0.14);
+    }
+
+    .my-routes-aside {
+      position: sticky;
+      top: 88px;
+      align-self: start;
+      padding: 18px;
+      max-height: min(78vh, 720px);
+      overflow: auto;
+    }
+
+    .my-routes-aside h3 {
+      margin: 0 0 10px;
+      font-size: 17px;
+      color: var(--primary-dark);
+    }
+
+    .saved-route-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.92);
+      margin-bottom: 10px;
+    }
+
+    .saved-route-item strong {
+      font-size: 14px;
+      color: var(--primary-dark);
+    }
+
+    .saved-route-item small {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .saved-route-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn-tiny {
+      font-size: 12px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--primary-dark);
+      font-family: inherit;
+      transition: 0.2s ease;
+    }
+
+    .btn-tiny:hover {
+      border-color: rgba(35, 71, 161, 0.28);
+    }
+
+    .btn-tiny.danger {
+      color: #b91c1c;
+      border-color: rgba(185, 28, 28, 0.25);
+    }
+
+    .route-builder {
+      padding: 18px;
+    }
+
+    .route-builder h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      color: var(--primary-dark);
+    }
+
+    .route-builder-hint {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0 0 14px;
+      line-height: 1.65;
+    }
+
+    .route-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      min-height: 40px;
+      align-items: center;
+    }
+
+    .route-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(35, 71, 161, 0.09);
+      color: var(--primary-dark);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .route-chip button {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1;
+      padding: 0 2px;
+      font-family: inherit;
+    }
+
+    .route-chip button:hover {
+      color: #b91c1c;
+    }
+
+    .route-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .route-controls label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .route-controls select {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      font-size: 14px;
+      font-family: inherit;
+      background: white;
+      color: var(--text);
+    }
+
+    .route-actions-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .route-placeholder {
+      border: 2px dashed rgba(35, 71, 161, 0.2);
+      border-radius: 18px;
+      padding: 16px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .route-placeholder strong {
+      display: block;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+
+    /* 打卡规划弹窗 */
+    .plan-modal .modal-panel {
+      max-width: 520px;
+    }
+
+    .plan-step-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .plan-step {
+      display: flex;
+      gap: 12px;
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .plan-step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      font-weight: 800;
+      font-size: 14px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .plan-step-body strong {
+      display: block;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+
+    .plan-step-body small {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .plan-disclaimer {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 14px 0 0;
+      line-height: 1.6;
+      padding: 12px;
+      border-radius: 12px;
+      background: rgba(35, 71, 161, 0.06);
     }
 
     .map-box {
@@ -1222,6 +1521,17 @@
       line-height: 1.7;
     }
 
+    @media (max-width: 1180px) {
+      .route-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .my-routes-aside {
+        position: static;
+        max-height: none;
+      }
+    }
+
     @media (max-width: 980px) {
       .hero-grid,
       .route-layout,
@@ -1537,7 +1847,7 @@
         <div class="section-title">
           <div>
             <h2>推荐校园路线</h2>
-            <p>下面的原型页面将校园导览拆成不同主题路线，适合新生第一次参观、家长来访或外部访客快速了解校园。</p>
+            <p>下方三条为主题介绍；<strong>自定义打卡路线</strong>可自选楼栋、规划顺序并保存至「我的路线」（步行请对照校园地图）。</p>
           </div>
         </div>
 
@@ -1575,7 +1885,7 @@
         </div>
 
         <div class="route-layout">
-          <div class="card map-box">
+          <div class="card map-box" id="campus-map-preview-box">
             <div class="map-title">
               <div>
                 <h3 style="margin:0 0 6px;color:#17316f;">Campus Map Preview</h3>
@@ -1632,56 +1942,107 @@
             </div>
           </div>
 
-          <div class="route-panel">
-            <div class="route-card active" data-route="orientation" onclick="selectRoute(this)">
-              <div class="route-top">
-                <h4>新生入门路线</h4>
-                <span>30 mins</span>
+          <div class="route-main-col">
+            <div id="route-view-pick" class="route-view route-view-pick">
+              <div class="route-cards-row">
+                <div class="route-card" data-route="orientation" onclick="selectRoute(this)">
+                  <div class="route-top">
+                    <h4>新生路线</h4>
+                    <span>≈30 min</span>
+                  </div>
+                  <p>教学楼、公共服务与校园地标，帮助新生快速建立空间认知与报到动线。</p>
+                  <div class="meta">
+                    <b>迎新</b>
+                    <b>核心楼</b>
+                    <b>打卡</b>
+                  </div>
+                </div>
+
+                <div class="route-card" data-route="visitor" onclick="selectRoute(this)">
+                  <div class="route-top">
+                    <h4>外来访客</h4>
+                    <span>≈35 min</span>
+                  </div>
+                  <p>展示国际化场景、代表性建筑与学术氛围，适合开放日与短期参观。</p>
+                  <div class="meta">
+                    <b>参观</b>
+                    <b>双语友好</b>
+                    <b>拍照点</b>
+                  </div>
+                </div>
+
+                <div class="route-card" data-route="challenge" onclick="selectRoute(this)">
+                  <div class="route-top">
+                    <h4>探索挑战路线</h4>
+                    <span>≈50 min</span>
+                  </div>
+                  <p>任务点、问答与集章机制，让导览更游戏化，适合想深度逛校园的用户。</p>
+                  <div class="meta">
+                    <b>挑战</b>
+                    <b>集章</b>
+                    <b>隐藏点</b>
+                  </div>
+                </div>
               </div>
-              <p>快速了解教学楼、图书馆、学生中心与常见服务点，帮助新生完成第一天入校适应。</p>
-              <div class="meta">
-                <b>Orientation</b>
-                <b>Top Picks</b>
-                <b>Check-in Reward</b>
+
+              <div
+                class="route-card route-card-custom"
+                data-route="custom"
+                role="button"
+                tabindex="0"
+                onclick="selectRoute(this)"
+                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectRoute(this);}"
+              >
+                <div class="route-top">
+                  <h4>自定义打卡路线</h4>
+                  <span>规划</span>
+                </div>
+                <p>自选楼栋加入草稿，按距离近似排序后「开始打卡」。左侧地图不变，右侧为路线草稿、预留能力与「我的路线」。</p>
+                <div class="meta">
+                  <b>自选站点</b>
+                  <b>路线规划</b>
+                  <b>保存 / 加载</b>
+                </div>
               </div>
+
+              <p class="route-expand-hint">上方三条为主题介绍（不含规划流程）；需<strong>点击「自定义打卡路线」</strong>进入打卡与路线规划。</p>
             </div>
 
-            <div class="route-card" data-route="family" onclick="selectRoute(this)">
-              <div class="route-top">
-                <h4>家长来访路线</h4>
-                <span>40 mins</span>
+            <div id="route-view-tour" class="route-view route-view-tour" hidden>
+              <div class="route-tour-toolbar">
+                <button type="button" class="btn btn-secondary" id="btn-route-back" style="font-size:14px;padding:10px 16px;">← 返回选择路线</button>
+                <span class="route-tour-theme-label" id="route-tour-theme-label" aria-live="polite"></span>
               </div>
-              <p>突出校园环境、学习空间与学生支持资源，让家长更直观理解学生的学习与生活体验。</p>
-              <div class="meta">
-                <b>Family-friendly</b>
-                <b>Campus Story</b>
-                <b>Photo Spots</b>
-              </div>
-            </div>
+              <div class="route-tour-stack">
+                <div class="card route-builder">
+                  <h3>路线草稿 · 自定义打卡</h3>
+                  <p class="route-builder-hint">在左侧地图点击楼栋 → 弹窗中选「加入路线」。至少保留 1 个站点后，选择起点并点击「开始打卡」生成顺序。室外步行请对照纸质/现场地图，本页<strong>仅提示建议楼层</strong>。</p>
+                  <div id="route-draft-chips" class="route-chips" aria-live="polite"></div>
+                  <div class="route-controls">
+                    <div>
+                      <label for="route-start-select">起点（可选手动楼栋或 GPS 近似最近楼）</label>
+                      <select id="route-start-select" aria-label="打卡起点">
+                        <option value="__gps__">使用实时定位：自动选离我最近的已选楼栋作为起点</option>
+                      </select>
+                    </div>
+                    <div class="route-actions-row">
+                      <button type="button" class="btn btn-secondary" id="btn-clear-draft">清空草稿</button>
+                      <button type="button" class="btn btn-primary" id="btn-save-route">保存到我的路线</button>
+                      <button type="button" class="btn btn-ghost" id="btn-start-checkin">开始打卡</button>
+                    </div>
+                  </div>
+                </div>
 
-            <div class="route-card" data-route="international" onclick="selectRoute(this)">
-              <div class="route-top">
-                <h4>国际访客路线</h4>
-                <span>35 mins</span>
-              </div>
-              <p>以双语介绍校园特色、学术氛围与国际化场景，适合短时间参观与文化展示。</p>
-              <div class="meta">
-                <b>Bilingual</b>
-                <b>Audio Guide</b>
-                <b>Easy Navigation</b>
-              </div>
-            </div>
+                <div class="route-placeholder">
+                  <strong>更多能力预留区</strong>
+                  语音导览、AR、成就徽章、社交分享等可接在此卡片下方，避免与核心路线逻辑耦合。
+                </div>
 
-            <div class="route-card" data-route="challenge" onclick="selectRoute(this)">
-              <div class="route-top">
-                <h4>探索挑战路线</h4>
-                <span>50 mins</span>
-              </div>
-              <p>通过任务点、问答、集章和奖励机制，让校园导览更游戏化，增强参与度与记忆点。</p>
-              <div class="meta">
-                <b>Gamified</b>
-                <b>Stamp Passport</b>
-                <b>Hidden Spots</b>
+                <aside class="card my-routes-aside" aria-label="我的路线">
+                  <h3>我的路线</h3>
+                  <p class="route-builder-hint" style="margin:0 0 12px;">保存当前草稿；点击「加载」可回填站点，确认后再点「开始打卡」。数据保存在本机浏览器。</p>
+                  <div id="saved-routes-list"></div>
+                </aside>
               </div>
             </div>
           </div>
@@ -1695,7 +2056,7 @@
           <div>
             <h2>核心功能设计</h2>
             <p>
-              课程要求系统实现至少 3 个 must-have playful features。这里我为 B3 主题设计了 4 个很适合展示的功能，既满足 human-centric，也方便你们后面写 portfolio 和做 video demo。
+              课程要求系统实现至少 3 个 must-have playful features。本页已实现路线草稿、保存与近邻规划作为核心 playful flow；其余能力可在预留区扩展。
             </p>
           </div>
         </div>
@@ -1704,7 +2065,7 @@
           <div class="card feature-card">
             <div class="icon">🗺️</div>
             <h3>智能路线推荐</h3>
-            <p>用户可根据身份选择“新生 / 家长 / 外部访客 / 挑战玩家”，系统动态展示适合的导览路线与停靠点顺序。</p>
+            <p>通过「自定义打卡路线」在地图上自选楼栋加入草稿，并按示意图近似距离生成打卡顺序；三条主题路线为场景介绍。</p>
           </div>
           <div class="card feature-card">
             <div class="icon">📍</div>
@@ -1900,12 +2261,80 @@
     </div>
   </div>
 
+  <!-- 打卡顺序规划（近邻近似 + 楼层提示） -->
+  <div class="modal plan-modal" id="route-plan-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="打卡路线规划">
+    <div class="modal-panel" role="document">
+      <div class="modal-head">
+        <div class="modal-title">
+          <span class="pill" id="route-plan-pill">📍 规划结果</span>
+          <div>
+            <strong id="route-plan-title">今日打卡顺序</strong>
+          </div>
+        </div>
+        <button class="icon-btn" type="button" id="route-plan-close" aria-label="关闭">Esc</button>
+      </div>
+      <div class="modal-body" style="grid-template-columns:1fr;">
+        <div>
+          <p id="route-plan-intro" style="margin:0 0 14px;color:var(--muted);font-size:14px;line-height:1.65;"></p>
+          <ol class="plan-step-list" id="route-plan-steps"></ol>
+          <p class="plan-disclaimer" id="route-plan-disclaimer"></p>
+          <div class="cta-row" style="margin-top:16px;">
+            <button type="button" class="btn btn-primary" id="route-plan-confirm">从第一站开始打卡</button>
+            <button type="button" class="btn btn-ghost" id="route-plan-back">返回编辑</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script>
-    function selectRoute(card) {
-      document.querySelectorAll('.route-card').forEach(item => item.classList.remove('active'));
-      card.classList.add('active');
+    const ROUTE_THEME_LABELS = {
+      orientation: "新生路线",
+      visitor: "外来访客",
+      challenge: "探索挑战路线",
+      custom: "自定义打卡路线"
+    };
+
+    function updateRouteTourThemeLabel(theme) {
+      const el = document.getElementById("route-tour-theme-label");
+      if (!el) return;
+      const name = ROUTE_THEME_LABELS[theme] || theme || "";
+      el.textContent = name ? `当前主题：${name}` : "";
     }
+
+    /** 路线区「选主题」与「导览编辑」两页切换（左侧地图 DOM 不变，仅换右侧栏） */
+    function setRoutePageView(page) {
+      const pick = document.getElementById("route-view-pick");
+      const tour = document.getElementById("route-view-tour");
+      if (!pick || !tour) return;
+      if (page === "tour") {
+        pick.hidden = true;
+        tour.hidden = false;
+      } else {
+        pick.hidden = false;
+        tour.hidden = true;
+      }
+      window.setTimeout(() => window.dispatchEvent(new Event("resize")), 120);
+    }
+
+    function selectRoute(card) {
+      document.querySelectorAll(".route-card").forEach((item) => item.classList.remove("active"));
+      card.classList.add("active");
+      const theme = card.getAttribute("data-route");
+      if (!theme) return;
+      if (window.CampusTour) window.CampusTour.setTheme(theme);
+      if (theme === "custom") {
+        updateRouteTourThemeLabel("custom");
+        setRoutePageView("tour");
+      }
+      /* 新生 / 外来访客 / 探索挑战：仅选中卡片，不进入规划导览页 */
+    }
+
+    document.getElementById("btn-route-back")?.addEventListener("click", () => {
+      document.querySelectorAll(".route-card").forEach((item) => item.classList.remove("active"));
+      setRoutePageView("pick");
+    });
 
     function showMessage() {
       alert('欢迎来到 XJTLU Campus Tour Guide！这里可以继续接入真实地图、地点详情、打卡系统和 AR 功能。');
@@ -2097,6 +2526,7 @@
         bestFor: "理工实验课 · 科研参观",
         time: "5–8 分钟",
         task: "找到一层导览牌并拍照打卡",
+        floorHint: "主入口与实验室分区通常需先看一层总平面图；具体楼层以电梯旁索引为准。",
         access: "请按实地无障碍设施填写",
         images: [
           { src: "assets/locations/ls-1.jpg", alt: "生命科学楼" },
@@ -2114,6 +2544,7 @@
         bestFor: "新生 · 基础课导航",
         time: "5–10 分钟",
         task: "在楼前拍一张“开学第一天”风格照片",
+        floorHint: "公共课教室分布较分散，建议从一层主入口进入后查看楼层分布图。",
         access: "请按实地无障碍设施填写",
         images: [
           { src: "assets/locations/fb-1.jpg", alt: "基础楼" },
@@ -2131,6 +2562,7 @@
         bestFor: "全体访客 · 校园叙事主线",
         time: "8–12 分钟",
         task: "回答一题与中心楼相关的小知识并盖章",
+        floorHint: "中庭与连廊多从一层进入；高层观景台或功能区请按现场开放范围与指示牌。",
         access: "电梯/坡道（请核实）",
         images: [
           { src: "assets/locations/cb-1.jpg", alt: "中心楼" },
@@ -2453,6 +2885,370 @@
       return (s || "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#39;");
     }
 
+    /** 与示意图热点一致的相对坐标（%），用于近似距离排序（非道路最短路） */
+    const BUILDING_MAP_POS = {
+      ls: [32, 22], fb: [41, 42], cb: [42, 56], sa: [54, 51], sb: [54, 55], sc: [54, 59], sd: [54, 63],
+      pb: [61, 53], ma: [67, 53], mb: [67, 57], ee: [61, 63], eb: [68, 61], ir: [54, 73], ia: [63, 75],
+      hs: [63, 83], es: [53, 92], db: [65, 90], bs: [51, 83], as: [45, 71], gym: [73, 75]
+    };
+
+    const DEFAULT_FLOOR_HINT =
+      "到达后查看一层总索引或电梯旁楼层指引；步行路径请对照校园地图，本导览仅作楼层级提示。";
+
+    const LS_ROUTES_KEY = "xjtlu_campus_tour_routes_v1";
+
+    function distMapPercent(a, b) {
+      const pa = BUILDING_MAP_POS[a];
+      const pb = BUILDING_MAP_POS[b];
+      if (!pa || !pb) return 0;
+      return Math.hypot(pa[0] - pb[0], pa[1] - pb[1]);
+    }
+
+    function mapPercentToLatLng(px, py) {
+      const xNorm = (px - 30) / 48;
+      const yNorm = (py - 18) / 78;
+      const lat = 31.2718 + (0.45 - yNorm) * 0.009;
+      const lng = 120.7415 + (xNorm - 0.45) * 0.014;
+      return [lat, lng];
+    }
+
+    function nearestIdFromGps(lat, lng, ids) {
+      let best = null;
+      let bestD = Infinity;
+      for (const id of ids) {
+        const p = BUILDING_MAP_POS[id];
+        if (!p) continue;
+        const [blat, blng] = mapPercentToLatLng(p[0], p[1]);
+        const d = (lat - blat) * (lat - blat) + (lng - blng) * (lng - blng);
+        if (d < bestD) {
+          bestD = d;
+          best = id;
+        }
+      }
+      return best || ids[0];
+    }
+
+    function orderGreedyNearest(startId, ids) {
+      const uniq = [...new Set(ids)].filter((id) => BUILDING_MAP_POS[id]);
+      if (!uniq.length) return [];
+      let start = startId;
+      if (!uniq.includes(start)) start = uniq[0];
+      const remaining = new Set(uniq.filter((x) => x !== start));
+      const out = [start];
+      let cur = start;
+      while (remaining.size) {
+        let best = null;
+        let bestD = Infinity;
+        for (const id of remaining) {
+          const d = distMapPercent(cur, id);
+          if (d < bestD) {
+            bestD = d;
+            best = id;
+          }
+        }
+        remaining.delete(best);
+        out.push(best);
+        cur = best;
+      }
+      return out;
+    }
+
+    function loadSavedRoutes() {
+      try {
+        const raw = localStorage.getItem(LS_ROUTES_KEY);
+        const arr = JSON.parse(raw || "[]");
+        return Array.isArray(arr) ? arr : [];
+      } catch {
+        return [];
+      }
+    }
+
+    function saveSavedRoutes(arr) {
+      localStorage.setItem(LS_ROUTES_KEY, JSON.stringify(arr));
+    }
+
+    const CampusTour = (function () {
+      let draft = [];
+      let theme = "custom";
+      let lastPlanOrder = [];
+
+      function routeLabel(id) {
+        const L = LOCATIONS[id];
+        if (!L) return id;
+        return L.subtitle || L.title || id;
+      }
+
+      function themeName(r) {
+        const m = {
+          orientation: "新生路线",
+          visitor: "外来访客",
+          challenge: "探索挑战路线",
+          custom: "自定义打卡路线"
+        };
+        return m[r] || r;
+      }
+
+      function buildStartSelect() {
+        const sel = startSel();
+        if (!sel) return;
+        const preserved = sel.value;
+        sel.innerHTML = "";
+        const o0 = document.createElement("option");
+        o0.value = "__gps__";
+        o0.textContent = "使用实时定位：自动选离我最近的已选楼栋作为起点";
+        sel.appendChild(o0);
+        draft.forEach((id) => {
+          const o = document.createElement("option");
+          o.value = id;
+          o.textContent = `从 ${routeLabel(id)} 出发`;
+          sel.appendChild(o);
+        });
+        const ok = [...sel.options].some((opt) => opt.value === preserved);
+        sel.value = ok ? preserved : "__gps__";
+      }
+
+      function renderDraft() {
+        const el = chipsEl();
+        if (!el) return;
+        if (!draft.length) {
+          el.innerHTML = '<span style="color:var(--muted);font-size:13px;">暂无站点，请在地图点击楼栋并「加入路线」</span>';
+        } else {
+          el.innerHTML = draft
+            .map(
+              (id) =>
+                `<span class="route-chip">${escapeHtml(routeLabel(id))}<button type="button" data-remove="${escapeHtml(id)}" aria-label="移除">×</button></span>`
+            )
+            .join("");
+          el.querySelectorAll("button[data-remove]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const rid = btn.getAttribute("data-remove");
+              draft = draft.filter((x) => x !== rid);
+              renderDraft();
+            });
+          });
+        }
+        buildStartSelect();
+      }
+
+      function renderSaved() {
+        const el = savedEl();
+        if (!el) return;
+        const list = loadSavedRoutes();
+        if (!list.length) {
+          el.innerHTML = '<p style="margin:0;color:var(--muted);font-size:13px;">暂无保存，可先编辑草稿后点「保存到我的路线」。</p>';
+          return;
+        }
+        el.innerHTML = list
+          .map((item) => {
+            const stops = (item.stops || []).map(routeLabel).join(" → ");
+            const t = item.savedAt ? new Date(item.savedAt).toLocaleString() : "";
+            return `<div class="saved-route-item" data-saved-id="${escapeHtml(item.id)}">
+            <strong>${escapeHtml(item.name || "未命名路线")}</strong>
+            <small>${escapeHtml(themeName(item.routeType))} · ${escapeHtml(t)}<br>${escapeHtml(stops || "（无站点）")}</small>
+            <div class="saved-route-actions">
+              <button type="button" class="btn-tiny" data-load="${escapeHtml(item.id)}">加载到草稿</button>
+              <button type="button" class="btn-tiny danger" data-del="${escapeHtml(item.id)}">删除</button>
+            </div>
+          </div>`;
+          })
+          .join("");
+        el.querySelectorAll("[data-load]").forEach((btn) => {
+          btn.addEventListener("click", () => loadSavedById(btn.getAttribute("data-load")));
+        });
+        el.querySelectorAll("[data-del]").forEach((btn) => {
+          btn.addEventListener("click", () => deleteSavedById(btn.getAttribute("data-del")));
+        });
+      }
+
+      function loadSavedById(id) {
+        const list = loadSavedRoutes();
+        const item = list.find((x) => x.id === id);
+        if (!item) return;
+        draft = [...(item.stops || [])];
+        if (item.routeType) {
+          theme = item.routeType;
+          document.querySelectorAll(".route-card[data-route]").forEach((c) => {
+            c.classList.toggle("active", c.getAttribute("data-route") === item.routeType);
+          });
+        }
+        renderDraft();
+        renderSaved();
+        if (typeof setRoutePageView === "function") setRoutePageView("tour");
+        if (item.routeType) updateRouteTourThemeLabel(item.routeType);
+      }
+
+      function deleteSavedById(id) {
+        const list = loadSavedRoutes().filter((x) => x.id !== id);
+        saveSavedRoutes(list);
+        renderSaved();
+      }
+
+      function addToDraft(id) {
+        if (!LOCATIONS[id]) return;
+        if (!draft.includes(id)) draft.push(id);
+        renderDraft();
+      }
+
+      function clearDraft() {
+        draft = [];
+        renderDraft();
+      }
+
+      function saveDraft() {
+        const name = window.prompt("为这条路线命名（将保存当前草稿与主题）", `我的路线 ${new Date().toLocaleString()}`);
+        if (name === null) return;
+        const item = {
+          id: typeof crypto !== "undefined" && crypto.randomUUID ? crypto.randomUUID() : String(Date.now()),
+          name: name.trim() || "未命名路线",
+          routeType: theme,
+          stops: [...draft],
+          savedAt: new Date().toISOString()
+        };
+        const list = loadSavedRoutes();
+        list.unshift(item);
+        saveSavedRoutes(list);
+        renderSaved();
+      }
+
+      function resolveStartId(callback) {
+        const sel = startSel();
+        const mode = sel?.value || "__gps__";
+        const ids = [...draft];
+        if (!ids.length) {
+          callback(null);
+          return;
+        }
+        if (mode === "__gps__") {
+          if (!navigator.geolocation) {
+            callback(ids[0]);
+            return;
+          }
+          navigator.geolocation.getCurrentPosition(
+            (pos) => {
+              const { latitude, longitude } = pos.coords;
+              callback(nearestIdFromGps(latitude, longitude, ids));
+            },
+            () => callback(ids[0]),
+            { enableHighAccuracy: true, timeout: 8000, maximumAge: 60000 }
+          );
+          return;
+        }
+        callback(mode);
+      }
+
+      function closePlanModal() {
+        const modal = document.getElementById("route-plan-modal");
+        if (!modal) return;
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      function openPlanModal(ordered, startNote) {
+        lastPlanOrder = [...ordered];
+        const modal = document.getElementById("route-plan-modal");
+        const stepsEl = document.getElementById("route-plan-steps");
+        const intro = document.getElementById("route-plan-intro");
+        const disclaimer = document.getElementById("route-plan-disclaimer");
+        const title = document.getElementById("route-plan-title");
+        if (!modal || !stepsEl) return;
+        title.textContent = "今日打卡顺序（近到远近似）";
+        if (intro) intro.textContent = startNote || "";
+        stepsEl.innerHTML = ordered
+          .map((id, idx) => {
+            const loc = LOCATIONS[id];
+            const name = loc ? `${loc.subtitle || loc.title}（${String(id).toUpperCase()}）` : id;
+            const floorHint = (loc && loc.floorHint) || DEFAULT_FLOOR_HINT;
+            return `<li class="plan-step">
+            <div class="plan-step-num">${idx + 1}</div>
+            <div class="plan-step-body">
+              <strong>${escapeHtml(name)}</strong>
+              <small>${escapeHtml(floorHint)}</small>
+            </div>
+          </li>`;
+          })
+          .join("");
+        if (disclaimer) {
+          disclaimer.textContent =
+            "说明：顺序依据校园示意图上各楼位置做直线近似距离（最近邻贪心），不等同于道路导航最短路径。跨楼步行请以现场地图与指示牌为准。";
+        }
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function runPlanning() {
+        if (!draft.length) {
+          window.alert("请先在地图选择楼栋并加入路线。");
+          return;
+        }
+        resolveStartId((startId) => {
+          if (!startId) return;
+          const ordered = orderGreedyNearest(startId, draft);
+          const startLabel = routeLabel(startId);
+          openPlanModal(ordered, `起点：${startLabel}。以下按示意图近似距离由近到远排列。`);
+        });
+      }
+
+      function chipsEl() {
+        return document.getElementById("route-draft-chips");
+      }
+      function startSel() {
+        return document.getElementById("route-start-select");
+      }
+      function savedEl() {
+        return document.getElementById("saved-routes-list");
+      }
+
+      function bindUi() {
+        document.getElementById("btn-clear-draft")?.addEventListener("click", () => clearDraft());
+        document.getElementById("btn-save-route")?.addEventListener("click", () => {
+          if (!draft.length) {
+            window.alert("草稿为空，无法保存。");
+            return;
+          }
+          saveDraft();
+        });
+        document.getElementById("btn-start-checkin")?.addEventListener("click", () => runPlanning());
+        document.getElementById("route-plan-close")?.addEventListener("click", closePlanModal);
+        document.getElementById("route-plan-back")?.addEventListener("click", closePlanModal);
+        document.getElementById("route-plan-modal")?.addEventListener("click", (e) => {
+          if (e.target.id === "route-plan-modal") closePlanModal();
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.key !== "Escape") return;
+          const pm = document.getElementById("route-plan-modal");
+          if (pm && pm.getAttribute("aria-hidden") === "false") closePlanModal();
+        });
+        document.getElementById("route-plan-confirm")?.addEventListener("click", () => {
+          closePlanModal();
+          const first = lastPlanOrder[0];
+          if (first) {
+            document.querySelector(`.map-hotspot.location-trigger[data-location="${first}"]`)?.click();
+          }
+        });
+      }
+
+      function init() {
+        renderDraft();
+        renderSaved();
+        bindUi();
+      }
+
+      if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+      else init();
+
+      return {
+        setTheme(t) {
+          if (t) theme = t;
+        },
+        addToDraft,
+        runPlanning,
+        openPlanModal,
+        closePlanModal
+      };
+    })();
+
+    window.CampusTour = CampusTour;
+
     function createCarousel({ trackEl, barsEl, prevEl, nextEl, slides, caption = false }) {
       if (!trackEl || !barsEl || !prevEl || !nextEl) return null;
       const safeSlides = (slides || []).filter(Boolean);
@@ -2708,15 +3504,15 @@
         });
       });
 
-      // route cards: open the "primary" location of that route (demo behavior)
+      // route cards: open the "primary" location of that route（双击）
       const routeFirstStop = {
         orientation: "cb",
-        family: "fb",
-        international: "ia",
+        visitor: "ia",
         challenge: "gym"
       };
       document.querySelectorAll(".route-card[data-route]").forEach((card) => {
         card.addEventListener("dblclick", () => {
+          if (typeof selectRoute === "function") selectRoute(card);
           const r = card.getAttribute("data-route");
           const id = routeFirstStop[r];
           if (id) openLocation(id, card);
@@ -2724,10 +3520,24 @@
       });
 
       primary?.addEventListener("click", () => {
-        alert(`已将「${LOCATIONS[activeId]?.title || "该地点"}」加入当前路线（这里可接入真实路线状态管理）。`);
+        if (!activeId || !window.CampusTour) return;
+        const tourView = document.getElementById("route-view-tour");
+        if (tourView && tourView.hidden) {
+          window.alert("请先点击「自定义打卡路线」进入导览页（左侧仍为地图，右侧为路线草稿），再加入站点。");
+          return;
+        }
+        window.CampusTour.addToDraft(activeId);
       });
       secondary?.addEventListener("click", () => {
-        alert(`开始打卡：${LOCATIONS[activeId]?.title || "该地点"}（这里可接入定位/二维码/AR 入口）。`);
+        if (!activeId || !window.CampusTour) return;
+        const tourView = document.getElementById("route-view-tour");
+        if (tourView && tourView.hidden) {
+          window.alert("请先点击「自定义打卡路线」进入导览页，再开始打卡。");
+          return;
+        }
+        window.CampusTour.addToDraft(activeId);
+        close();
+        window.setTimeout(() => window.CampusTour.runPlanning(), 0);
       });
     })();
   </script>
