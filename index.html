@@ -817,29 +817,31 @@
 
     .carousel-viewport {
       width: 100%;
-      height: clamp(220px, 35vw, 420px);
+      height: auto;
       overflow: hidden;
     }
 
     .carousel-track {
       display: flex;
-      height: 100%;
+      height: auto;
       transition: transform 520ms cubic-bezier(.2,.85,.2,1);
       will-change: transform;
     }
 
     .carousel-slide {
       min-width: 100%;
-      height: 100%;
+      height: auto;
       position: relative;
       background: linear-gradient(135deg, rgba(35,71,161,0.10), rgba(90,166,255,0.16));
+      overflow: visible;
     }
 
     .carousel-slide img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
       filter: saturate(1.02) contrast(1.02);
+      display: block;
     }
 
     .carousel-overlay {
@@ -1336,6 +1338,11 @@
       transform: translateY(10px);
       opacity: 0;
       animation: modalIn 220ms ease forwards;
+      display: flex;
+      flex-direction: column;
+      max-height: calc(100vh - 96px);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     @keyframes modalIn {
@@ -1420,18 +1427,31 @@
       display: grid;
       grid-template-columns: 1.08fr 0.92fr;
       gap: 16px;
+      overflow: visible;
     }
 
     .modal-media {
       border-radius: 22px;
-      overflow: hidden;
+      overflow: visible;
       border: 1px solid rgba(35, 71, 161, 0.12);
       background: rgba(255,255,255,0.84);
       box-shadow: 0 12px 22px rgba(35, 71, 161, 0.10);
     }
 
     .modal-media .carousel-viewport {
-      height: 320px;
+      height: 380px;
+    }
+
+    .modal-media .carousel-track,
+    .modal-media .carousel-slide {
+      height: 100%;
+    }
+
+    .modal-media .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
     }
 
     .detail-card {
@@ -1505,7 +1525,14 @@
         grid-template-columns: 1fr;
       }
       .modal-media .carousel-viewport {
-        height: 280px;
+        height: 320px;
+      }
+      .modal-media .carousel-track,
+      .modal-media .carousel-slide {
+        height: 100%;
+      }
+      .modal-panel {
+        max-height: calc(100vh - 72px);
       }
     }
 
@@ -2520,8 +2547,8 @@
         type: "📍 北校区",
         title: "Life Sciences Building",
         subtitle: "生命科学楼",
-        desc: "北校区科研与实验教学的重要空间，常承载生命科学相关课程与实验室动线。",
-        story: "可在此写入该楼落成背景、命名由来或一届届学生在这里发生的趣事。",
+        desc: "A seven-storey hub for industry-integrated education, combining authentic industrial scenarios with immersive virtual teaching environments.",
+        story: "The building features a 2,200 m² high-rise laboratory animal centre and supports hands-on learning across teaching, research, and applied scientific training.",
         tags: ["Lab", "North Campus", "Science"],
         bestFor: "理工实验课 · 科研参观",
         time: "5–8 分钟",
@@ -2540,8 +2567,8 @@
         type: "📍 中校区",
         title: "Foundation Building",
         subtitle: "基础楼",
-        desc: "面向全校的基础课与公共教学空间之一，是许多同学大一、大二课程的“起点楼”。",
-        story: "适合写：通识课回忆、清晨赶课的人流、与草坪/中轴线的视觉关系等校园记忆。",
+        desc: "A core facility supporting undergraduate general education and foundational discipline teaching, and a major venue for EAP classes and daily instruction.",
+        story: "Its modular spatial design includes tiered lecture rooms, smart multimedia classrooms, and open experimental areas, creating an adaptable environment for small-group seminars and cross-year collaborative learning.",
         tags: ["Teaching", "Core Courses", "Landmark"],
         bestFor: "新生 · 基础课导航",
         time: "5–10 分钟",
@@ -2558,8 +2585,8 @@
         type: "📍 Landmark",
         title: "Central Building",
         subtitle: "中心楼",
-        desc: "校园最具辨识度的建筑之一，形似“H”的体量常作为宣传册与访客的视觉锚点。",
-        story: "可讲述：设计概念、中庭与连廊的使用方式、重大活动或展览曾在此举办的故事。",
+        desc: "As the campus core functional zone, it brings together career development services, academic support, and student leisure in one integrated destination.",
+        story: "Carrying the mission of linking academic and industrial resources, the building adopts a compact spatial layout and uses intelligent management systems to support flexible transitions across multiple scenarios.",
         tags: ["Iconic", "Campus Story", "Photo Spot"],
         bestFor: "全体访客 · 校园叙事主线",
         time: "8–12 分钟",
