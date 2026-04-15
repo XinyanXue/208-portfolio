@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -379,7 +379,7 @@
       line-height: 1.6;
     }
 
-    /* 路线「页面」：选路线 / 导览编辑，二选一显示 */
+    /* Route views: pick route vs tour editor */
     .route-view[hidden] {
       display: none !important;
     }
@@ -609,7 +609,7 @@
       margin-bottom: 6px;
     }
 
-    /* 打卡规划弹窗 */
+    /* Check-in plan modal */
     .plan-modal .modal-panel {
       max-width: 490px;
     }
@@ -1255,7 +1255,7 @@
       z-index: 1;
     }
 
-    /* 关于我们 - 团队介绍 */
+    /* About / team (optional) */
     .team-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -1626,11 +1626,11 @@
         </div>
       </div>
       <nav class="nav-links">
-        <a href="#about">项目概览</a>
-        <a href="#routes">路线设计</a>
-        <a href="#features">核心功能</a>
-        <a href="#experience">用户体验</a>
-        <a href="#contact">立即体验</a>
+        <a href="#about">Overview</a>
+        <a href="#routes">Routes</a>
+        <a href="#features">Features</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Try it</a>
       </nav>
     </div>
   </header>
@@ -1640,14 +1640,14 @@
       <div class="container hero-grid">
         <div>
           <div class="badge">📍 B3 · Campus Tour · Mobile / Onsite / Online</div>
-          <h1>带你轻松探索<br>西浦校园的每一步</h1>
+          <h1>Explore XJTLU<br>One Step at a Time</h1>
           <p>
-            这是一个面向新生与外部访客的校园导览网页原型，结合路线推荐、互动打卡、任务收集与场景介绍，帮助用户在更短时间内了解校园空间、服务设施与特色地点。
-            设计方向参考课程 Brief 中 B3「XJTLU Campus Tour」，其目标用户为 new students 与 external visitors，设备以移动端为主，并鼓励结合 XR、location-based 与 tangible 体验。
+            A playful campus tour for new students and visitors: themed routes, check-ins, light tasks, and place stories—so you can learn spaces, services, and landmarks faster on mobile.
+            Built around location-based exploration with room for XR and tangible add-ons.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#routes">开始探索路线</a>
-            <a class="btn btn-secondary" href="#features">查看核心功能</a>
+            <a class="btn btn-primary" href="#routes">Browse routes</a>
+            <a class="btn btn-secondary" href="#features">See features</a>
           </div>
         </div>
 
@@ -1703,9 +1703,9 @@
       <div class="container">
         <div class="section-title">
           <div>
-            <h2>项目概览</h2>
+            <h2>Project overview</h2>
             <p>
-              根据课程要求，系统必须是一个可通过 URL 访问的 Web App，并且应实现至少 3 个 must-have playful features，同时注重响应式设计与可用性。
+              A responsive web app you can open from a URL, with playful flows such as custom routes, saved itineraries, and map-based check-ins—designed for clarity on phones first.
             </p>
           </div>
         </div>
@@ -1713,157 +1713,18 @@
         <div class="grid-3">
           <div class="card">
             <div class="icon">🎯</div>
-            <h3>目标用户</h3>
-            <p>主要面向新生与校外访客，帮助他们快速建立对校园空间、常用设施和特色地点的初始认知。</p>
+            <h3>Who it’s for</h3>
+            <p>New students and external visitors who want a fast mental map of buildings, services, and highlights.</p>
           </div>
           <div class="card">
             <div class="icon">🧭</div>
-            <h3>系统目标</h3>
-            <p>为用户提供路线导航、地点介绍、互动任务与沉浸式探索，让导览更有趣、更清晰，也更具参与感。</p>
+            <h3>What it does</h3>
+            <p>Route ideas, place details, light tasks, and a more engaging way to explore than a plain map.</p>
           </div>
           <div class="card">
             <div class="icon">✨</div>
-            <h3>设计关键词</h3>
-            <p>Mobile-first、Playful、Location-based、Simple onboarding、Accessible UI、Campus storytelling。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= 团队介绍（About Us） ================ -->
-    <section id="team">
-      <div class="container">
-        <div class="section-title">
-          <div>
-            <h2>关于我们 · Team B3</h2>
-            <p>
-              本区块用于课程要求中的“成员介绍 + 两个 persona 展示”。请在下面四个卡片中替换为你们自己的照片、学号与个人简介内容。
-            </p>
-          </div>
-        </div>
-
-        <div class="team-grid">
-          <!-- 成员 1：Jiayi Chu -->
-          <div class="member-card">
-            <!-- TODO: 将此占位替换为 Jiayi Chu 的个人照片（建议 1:1 方形头像），或在此处插入 <img> 标签 -->
-            <div class="member-avatar">
-              在此替换为<br>Jiayi Chu 头像
-            </div>
-            <div class="member-name">Jiayi Chu</div>
-            <!-- TODO: 在下面填写对应学号，例如 “Student ID: 123456789” -->
-            <div class="member-meta">Student ID: （在此填写 Jiayi Chu 的学号）</div>
-            <!-- TODO: 在下面两三句话中介绍个人角色、技能或在本项目中的主要负责内容 -->
-            <div class="member-note">
-              在此用 2–3 句话简要介绍 Jiayi 在项目中的角色（例如：交互设计 / 原型制作 / 用户研究），以及你想强调的个人特长。
-            </div>
-          </div>
-
-          <!-- 成员 2：Jiayu Wang -->
-          <div class="member-card">
-            <img class="member-avatar" src="wjy/wjy.png" alt="Jiayu Wang">
-            <div class="member-name">Jiayu Wang</div> 
-            <div class="member-meta">Student ID: 2362046</div>
-            <div class="member-note">
-              I am a third-year Information and Computing Science student at Xi'an Jiaotong-Liverpool University, skilled in game development, programming, and interactive design. Passionate about XR and playful design, I look forward to creating immersive digital experiences with my team.
-            </div>
-          </div>
-
-          <!-- 成员 3：Xinyan Xue -->
-          <div class="member-card">
-             <img class="member-avatar" src="xxy/QQ.jpg" alt="Xinyan Xue">
-            
-        
-            <div class="member-name">Xinyan Xue</div>
-            <!-- TODO: 填写对应学号 -->
-            <div class="member-meta">Student ID: 2361538</div>
-            <!-- TODO: 简要介绍负责内容和技能 -->
-            <div class="member-note">
-              I am a third-year student at Xi'an Jiaotong-Liverpool University, majoring in Information and Computing Science. Through my studies, I have gained skills in programming, data processing, and algorithm design. I look forward to collaborating with my team members on this project and creating meaningful work together.
-            </div>
-          </div>
-
-          <!-- 成员 4：Zhiying Tang -->
-          <div class="member-card">
-            <img class="member-avatar" src="tzy/tzy.JPG" alt="Zhiying Tang">
-          
-            <div class="member-name">Zhiying Tang</div>
-          
-            <div class="member-meta">Student ID: 2360010</div>
-          
-            <div class="member-note">
-              I am a third-year Information and Computing Science student at Xi'an Jiaotong-Liverpool University. My studies have equipped me with skills in programming, algorithmic thinking, and system development. I am interested in exploring emerging technologies such as XR and interactive computing to create meaningful and innovative digital experiences.
-            </div>
-          </div>
-        </div>
-
-        <!-- ================= Persona 展示卡片（10-80-10 规则） ================= -->
-        <div class="section-title" style="margin-top:32px;">
-          <div>
-            <h3 style="margin:0; font-size:20px; color:#17316f;">Personas · 10-80-10</h3>
-            <p style="margin:8px 0 0; color:#6b7280; line-height:1.7;">
-              下面两个小卡片用于在 GitHub portfolio 中展示你们依据 10-80-10 规则构建的 personas。现在内容是空的占位提示，
-              请在正式提交前替换为具体文案和图片。
-            </p>
-          </div>
-        </div>
-
-        
-        <!--
-        <div class="grid-3" style="grid-template-columns: repeat(2, 1fr); gap:18px; margin-top:4px;">
-          <div class="card">
-            <h4 style="margin:0 0 6px; font-size:18px; color:#17316f;">Persona A（主流新生用户）</h4>
-            <p style="margin:0 0 8px; font-size:14px; color:#6b7280;">基础信息：（在此填写 Persona A...）</p>
-            <ul style="padding-left:18px; margin:0; font-size:14px; color:#6b7280; line-height:1.7;">
-              <li>目标：在此写 1–2 条该 persona 使用校园导览系统想达成的目标。</li>
-              <li>需求：在此写他在导航、信息获取上的关键需求。</li>
-              <li>痛点：在此写如果没有你们的系统，他会遇到的困难或焦虑。</li>
-              <li>典型场景：在此用一句话描述他什么时候、在哪里、用手机打开你们的导览。</li>
-            </ul>
-          </div>
-        
-          <div class="card">
-            <h4 style="margin:0 0 6px; font-size:18px; color:#17316f;">Persona B（边缘/特殊访客）</h4>
-            <p style="margin:0 0 8px; font-size:14px; color:#6b7280;">基础信息：（在此填写 Persona B...）</p>
-            <ul style="padding-left:18px; margin:0; font-size:14px; color:#6b7280; line-height:1.7;">
-              <li>目标：在此写这类用户希望通过校园导览完成什么。</li>
-              <li>特殊需求：在此写语言、无障碍、时间安排等方面的额外需求。</li>
-              <li>痛点：在此写如果导览只考虑主流用户，他容易被忽略的地方。</li>
-              <li>典型场景：在此用一句话描述他与谁一起来校园、在什么时候使用你们的导览。</li>
-            </ul>
-          </div>
-        </div>
-        -->
-        
-        
-        <div class="grid-3" style="grid-template-columns: repeat(2, 1fr); gap:18px; margin-top:4px;">
-          <!-- Persona A：New Student -->
-          <div class="card">
-            <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=800&q=80" alt="Persona A" style="width:100%; height:180px; object-fit:cover; border-radius:16px; margin-bottom:10px;">
-            <h4 style="margin:0 0 6px; font-size:18px; color:#17316f;">Persona A (New Student)</h4>
-            <p style="margin:0 0 8px; font-size:14px; color:#6b7280; font-weight: 500;">
-              Alex Chen · Year 1 Undergraduate · Undecided Major
-            </p>
-            <ul style="padding-left:18px; margin:0; font-size:14px; color:#6b7280; line-height:1.7;">
-              <li><b>Goals:</b> Locate essential life-service spots (e.g., IT Service Desk, Student One-Stop Center) quickly and explore different academic buildings to help decide on a future major.</li>
-              <li><b>Needs:</b> Needs to know the specific functions of different buildings (e.g., Design Studios vs. Engineering Labs) and navigate the complex South/North campus layout effortlessly.</li>
-              <li><b>Pain Points:</b> The campus is massive. Existing 2D maps only show building names but don't explain what actually happens inside, making it hard to feel connected to a potential major.</li>
-              <li><b>Scenario:</b> During the first week of the semester, Alex walks around the campus using the mobile web app to find the IT center while simultaneously discovering what the nearby Science Building is used for.</li>
-            </ul>
-          </div>
-        
-          <!-- Persona B：External Visitor -->
-          <div class="card">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Persona B" style="width:100%; height:180px; object-fit:cover; border-radius:16px; margin-bottom:10px;">
-            <h4 style="margin:0 0 6px; font-size:18px; color:#17316f;">Persona B (External Visitor)</h4>
-            <p style="margin:0 0 8px; font-size:14px; color:#6b7280; font-weight: 500;">
-              Sarah Jenkins · High School Parent · Visiting with Family
-            </p>
-            <ul style="padding-left:18px; margin:0; font-size:14px; color:#6b7280; line-height:1.7;">
-              <li><b>Goals:</b> Discover XJTLU's iconic landmarks (e.g., the Central Building, Tunnel) and get a feel for the university's academic atmosphere for her child's future application.</li>
-              <li><b>Special Needs:</b> Requires a curated "Highlight Tour" route that minimizes walking distance. Needs easy-to-understand background info about the university's culture without reading long texts.</li>
-              <li><b>Pain Points:</b> Totally unfamiliar with the campus. Without a human tour guide, she misses the historical or cultural significance behind the impressive architecture and feels lost.</li>
-              <li><b>Scenario:</b> On a weekend Open Day, Sarah and her child use the web app's interactive map to take a self-guided tour around the most photogenic and representative campus spots.</li>
-            </ul>
+            <h3>Design focus</h3>
+            <p>Mobile-first, playful, location-based, simple onboarding, accessible UI, campus storytelling.</p>
           </div>
         </div>
       </div>
@@ -1873,16 +1734,16 @@
       <div class="container">
         <div class="section-title">
           <div>
-            <h2>推荐校园路线</h2>
-            <p>下方三条为主题介绍；<strong>自定义打卡路线</strong>可自选楼栋、规划顺序并保存至「我的路线」（步行请对照校园地图）。</p>
+            <h2>Recommended routes</h2>
+            <p>The first three cards are themed previews. Use <strong>Custom check-in route</strong> to pick buildings, order stops, and save to <em>My routes</em> (walk paths follow real maps on site).</p>
           </div>
         </div>
 
         <div class="card carousel-card" style="margin-bottom:18px;">
           <div class="map-title" style="margin-bottom:12px;">
             <div>
-              <h3 style="margin:0 0 6px;color:#17316f;">真实校园照片轮播</h3>
-              <p style="margin:0;color:#6b7280;">用于高保真展示：把你们拍摄的校园照片放进来，自动轮播 + 可点击缩略图切换。</p>
+              <h3 style="margin:0 0 6px;color:#17316f;">Campus photo carousel</h3>
+              <p style="margin:0;color:#6b7280;">Auto-rotating highlights with tappable thumbnails.</p>
             </div>
             <div class="legend">
               <span>📷 Real Photos</span>
@@ -1891,23 +1752,20 @@
             </div>
           </div>
 
-          <div class="carousel" id="campus-carousel" aria-roledescription="carousel" aria-label="校园照片轮播">
+          <div class="carousel" id="campus-carousel" aria-roledescription="carousel" aria-label="Campus photos">
             <div class="carousel-dots" id="campus-carousel-bars" aria-hidden="true"></div>
             <div class="carousel-viewport">
               <div class="carousel-track" id="campus-carousel-track"></div>
             </div>
             <div class="carousel-controls" aria-hidden="false">
-              <button class="carousel-btn prev" type="button" id="campus-carousel-prev" aria-label="上一张">‹</button>
-              <button class="carousel-btn next" type="button" id="campus-carousel-next" aria-label="下一张">›</button>
+              <button class="carousel-btn prev" type="button" id="campus-carousel-prev" aria-label="Previous slide">‹</button>
+              <button class="carousel-btn next" type="button" id="campus-carousel-next" aria-label="Next slide">›</button>
             </div>
           </div>
 
           <div class="carousel-meta">
-            <div class="carousel-thumbs" id="campus-carousel-thumbs" aria-label="轮播缩略图"></div>
-            <div class="carousel-hint">
-              <!-- TODO: 将你们的真实校园图片放到项目目录里（例如：CPT208/assets/campus/xxx.jpg），然后在下方 JS 的 CAMPUS_PHOTOS 数组里替换路径即可 -->
-              支持本地图片路径或线上图片 URL；建议统一 \(16:9\) 或更宽比例，观感更像 Figma 高保真稿。
-            </div>
+            <div class="carousel-thumbs" id="campus-carousel-thumbs" aria-label="Thumbnails"></div>
+            <div class="carousel-hint">16:9 or wider images look best in this layout.</div>
           </div>
         </div>
 
@@ -1916,56 +1774,55 @@
             <div class="map-title">
               <div>
                 <h3 style="margin:0 0 6px;color:#17316f;">Campus Map Preview</h3>
-                <p style="margin:0;color:#6b7280;">「校园示意图」点击楼栋代号查看详情；「实时定位地图」使用 Leaflet + OpenStreetMap，点「定位到我」开启 GPS 持续跟踪。示意图热点可微调各按钮的 left / top 百分比。</p>
+                <p style="margin:0;color:#6b7280;">Illustrated map: tap a building code for details. Live map: OpenStreetMap with GPS—use <strong>Locate me</strong> for continuous tracking.</p>
               </div>
               <div class="legend">
-                <span>🏛️ 楼栋热点</span>
-                <span>🖼️ 近景轮播</span>
-                <span>📖 故事弹窗</span>
-                <span>📍 实时定位</span>
+                <span>🏛️ Hotspots</span>
+                <span>🖼️ Photos</span>
+                <span>📖 Stories</span>
+                <span>📍 Live GPS</span>
               </div>
             </div>
 
-            <div class="map-tabs" role="tablist" aria-label="地图视图">
-              <button type="button" class="map-tab" role="tab" id="map-tab-illustrated" aria-selected="true" aria-controls="map-panel-illustrated" data-map-tab="illustrated">校园示意图</button>
-              <button type="button" class="map-tab" role="tab" id="map-tab-live" aria-selected="false" aria-controls="map-panel-live" data-map-tab="live">实时定位地图</button>
+            <div class="map-tabs" role="tablist" aria-label="Map view">
+              <button type="button" class="map-tab" role="tab" id="map-tab-illustrated" aria-selected="true" aria-controls="map-panel-illustrated" data-map-tab="illustrated">Illustrated map</button>
+              <button type="button" class="map-tab" role="tab" id="map-tab-live" aria-selected="false" aria-controls="map-panel-live" data-map-tab="live">Live location</button>
             </div>
 
             <div class="map-tab-panel" id="map-panel-illustrated" role="tabpanel" aria-labelledby="map-tab-illustrated" data-map-panel="illustrated">
             <div class="map-box-inner" id="campus-map-stage">
-              <img class="campus-map-img" src="project/campus-map.png" alt="西交利物浦大学校园地图" loading="lazy" />
-              <!-- 坐标为相对地图容器的百分比；请对照你的底图微调 left / top -->
-              <button type="button" class="map-hotspot location-trigger" data-location="ls" style="left:32%; top:22%; background:#2d8f47;" aria-label="生命科学楼 LS">LS</button>
-              <button type="button" class="map-hotspot location-trigger" data-location="fb" style="left:41%; top:42%; background:#5ba3d4;" aria-label="基础楼 FB">FB</button>
-              <button type="button" class="map-hotspot location-trigger" data-location="cb" style="left:42%; top:56%; background:#17316f;" aria-label="中心楼 CB">CB</button>
-              <button type="button" class="map-hotspot location-trigger" data-location="sa" style="left:54%; top:51%; background:#6abf69;" aria-label="理科楼 A SA">SA</button>
-              <button type="button" class="map-hotspot location-trigger" data-location="sb" style="left:54%; top:55%; background:#6abf69;" aria-label="理科楼 B SB">SB</button>
-              <button type="button" class="map-hotspot location-trigger" data-location="sc" style="left:54%; top:59%; background:#6abf69;" aria-label="理科楼 C SC">SC</button>
-              <button type="button" class="map-hotspot location-trigger" data-location="sd" style="left:54%; top:63%; background:#6abf69;" aria-label="理科楼 D SD">SD</button>
-              <button type="button" class="map-hotspot location-trigger" data-location="pb" style="left:61%; top:53%; background:#e8a23a;" aria-label="公共楼 PB">PB</button>
-              <button type="button" class="map-hotspot location-trigger" data-location="ma" style="left:67%; top:53%; background:#7e57c2;" aria-label="数学楼 A MA">MA</button>
-              <button type="button" class="map-hotspot location-trigger" data-location="mb" style="left:67%; top:57%; background:#7e57c2;" aria-label="数学楼 B MB">MB</button>
-              <button type="button" class="map-hotspot location-trigger" data-location="ee" style="left:61%; top:63%; background:#26a69a;" aria-label="电子电气 EE">EE</button>
-              <button type="button" class="map-hotspot location-trigger" data-location="eb" style="left:68%; top:61%; background:#3d8f5a;" aria-label="工科楼 EB">EB</button>
-              <button type="button" class="map-hotspot location-trigger" data-location="ir" style="left:54%; top:73%; background:#c62828;" aria-label="国际科研中心 IR">IR</button>
-              <button type="button" class="map-hotspot location-trigger" data-location="ia" style="left:63%; top:75%; background:#ef6c2a;" aria-label="国际学术交流中心 IA">IA</button>
-              <button type="button" class="map-hotspot location-trigger" data-location="hs" style="left:63%; top:83%; background:#8d6e63;" aria-label="人文社科楼 HS">HS</button>
-              <button type="button" class="map-hotspot location-trigger" data-location="es" style="left:53%; top:92%; background:#d84315;" aria-label="新兴科学楼 ES">ES</button>
-              <button type="button" class="map-hotspot location-trigger" data-location="db" style="left:65%; top:90%; background:#795548;" aria-label="设计楼 DB">DB</button>
-              <button type="button" class="map-hotspot location-trigger" data-location="bs" style="left:51%; top:83%; background:#c62828;" aria-label="西浦国际商学院 BS">BS</button>
-              <button type="button" class="map-hotspot location-trigger" data-location="as" style="left:45%; top:71%; background:#f9a825;" aria-label="影视与创意科技楼 AS">AS</button>
-              <button type="button" class="map-hotspot location-trigger" data-location="gym" style="left:73%; top:75%; background:#263238;" aria-label="体育馆 GYM">GYM</button>
+              <img class="campus-map-img" src="project/campus-map.png" alt="XJTLU campus map" loading="lazy" />
+              <button type="button" class="map-hotspot location-trigger" data-location="ls" style="left:32%; top:22%; background:#2d8f47;" aria-label="Life Sciences LS">LS</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="fb" style="left:41%; top:42%; background:#5ba3d4;" aria-label="Foundation Building FB">FB</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="cb" style="left:42%; top:56%; background:#17316f;" aria-label="Central Building CB">CB</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="sa" style="left:54%; top:51%; background:#6abf69;" aria-label="Science Building A SA">SA</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="sb" style="left:54%; top:55%; background:#6abf69;" aria-label="Science Building B SB">SB</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="sc" style="left:54%; top:59%; background:#6abf69;" aria-label="Science Building C SC">SC</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="sd" style="left:54%; top:63%; background:#6abf69;" aria-label="Science Building D SD">SD</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="pb" style="left:61%; top:53%; background:#e8a23a;" aria-label="Public Building PB">PB</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="ma" style="left:67%; top:53%; background:#7e57c2;" aria-label="Mathematics Building A MA">MA</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="mb" style="left:67%; top:57%; background:#7e57c2;" aria-label="Mathematics Building B MB">MB</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="ee" style="left:61%; top:63%; background:#26a69a;" aria-label="Electrical & Electronic EE">EE</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="eb" style="left:68%; top:61%; background:#3d8f5a;" aria-label="Engineering Building EB">EB</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="ir" style="left:54%; top:73%; background:#c62828;" aria-label="International Research Centre IR">IR</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="ia" style="left:63%; top:75%; background:#ef6c2a;" aria-label="International Academic Exchange IA">IA</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="hs" style="left:63%; top:83%; background:#8d6e63;" aria-label="Humanities & Social Sciences HS">HS</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="es" style="left:53%; top:92%; background:#d84315;" aria-label="Emerging Sciences ES">ES</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="db" style="left:65%; top:90%; background:#795548;" aria-label="Design Building DB">DB</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="bs" style="left:51%; top:83%; background:#c62828;" aria-label="International Business School BS">BS</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="as" style="left:45%; top:71%; background:#f9a825;" aria-label="Film & Creative Technology AS">AS</button>
+              <button type="button" class="map-hotspot location-trigger" data-location="gym" style="left:73%; top:75%; background:#263238;" aria-label="Gymnasium GYM">GYM</button>
             </div>
             </div>
 
             <div class="map-tab-panel" id="map-panel-live" role="tabpanel" aria-labelledby="map-tab-live" data-map-panel="live" hidden>
-              <div id="leaflet-map" class="leaflet-map-host" role="application" aria-label="OpenStreetMap 实时地图"></div>
+              <div id="leaflet-map" class="leaflet-map-host" role="application" aria-label="OpenStreetMap live map"></div>
               <div class="leaflet-toolbar">
-                <button type="button" class="btn btn-primary" id="leaflet-locate-btn" style="font-size:14px;padding:10px 18px;">定位到我</button>
-                <button type="button" class="btn btn-ghost" id="leaflet-stop-btn" style="font-size:14px;padding:10px 18px;">停止跟踪</button>
+                <button type="button" class="btn btn-primary" id="leaflet-locate-btn" style="font-size:14px;padding:10px 18px;">Locate me</button>
+                <button type="button" class="btn btn-ghost" id="leaflet-stop-btn" style="font-size:14px;padding:10px 18px;">Stop tracking</button>
                 <span class="leaflet-status" id="leaflet-status" aria-live="polite"></span>
               </div>
-              <p class="small-note" style="margin:8px 0 0;">底图来自 OpenStreetMap；首次使用需允许浏览器定位。请通过 HTTPS 或 localhost 打开页面，否则定位可能不可用。GPS 在室外更准确，室内可能存在偏差。</p>
+              <p class="small-note" style="margin:8px 0 0;">Map data © OpenStreetMap. Allow location when prompted. Use HTTPS or localhost for GPS. Accuracy is best outdoors.</p>
             </div>
           </div>
 
@@ -1974,40 +1831,40 @@
               <div class="route-cards-row">
                 <div class="route-card" data-route="orientation" onclick="selectRoute(this)">
                   <div class="route-top">
-                    <h4>新生路线</h4>
+                    <h4>New student route</h4>
                     <span>≈30 min</span>
                   </div>
-                  <p>教学楼、公共服务与校园地标，帮助新生快速建立空间认知与报到动线。</p>
+                  <p>Teaching hubs, services, and landmarks—ideal for orientation week.</p>
                   <div class="meta">
-                    <b>迎新</b>
-                    <b>核心楼</b>
-                    <b>打卡</b>
+                    <b>Welcome</b>
+                    <b>Core sites</b>
+                    <b>Check-in</b>
                   </div>
                 </div>
 
                 <div class="route-card" data-route="visitor" onclick="selectRoute(this)">
                   <div class="route-top">
-                    <h4>外来访客</h4>
+                    <h4>Visitor route</h4>
                     <span>≈35 min</span>
                   </div>
-                  <p>展示国际化场景、代表性建筑与学术氛围，适合开放日与短期参观。</p>
+                  <p>Showcase buildings and campus life—good for open days and short visits.</p>
                   <div class="meta">
-                    <b>参观</b>
-                    <b>双语友好</b>
-                    <b>拍照点</b>
+                    <b>Tour</b>
+                    <b>Bilingual</b>
+                    <b>Photo spots</b>
                   </div>
                 </div>
 
                 <div class="route-card" data-route="challenge" onclick="selectRoute(this)">
                   <div class="route-top">
-                    <h4>探索挑战路线</h4>
+                    <h4>Challenge route</h4>
                     <span>≈50 min</span>
                   </div>
-                  <p>任务点、问答与集章机制，让导览更游戏化，适合想深度逛校园的用户。</p>
+                  <p>Tasks, quizzes, and stamps for a more game-like deep dive.</p>
                   <div class="meta">
-                    <b>挑战</b>
-                    <b>集章</b>
-                    <b>隐藏点</b>
+                    <b>Quests</b>
+                    <b>Stamps</b>
+                    <b>Hidden spots</b>
                   </div>
                 </div>
               </div>
@@ -2021,53 +1878,48 @@
                 onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectRoute(this);}"
               >
                 <div class="route-top">
-                  <h4>自定义打卡路线</h4>
-                  <span>规划</span>
+                  <h4>Custom check-in route</h4>
+                  <span>Plan</span>
                 </div>
-                <p>自选楼栋加入草稿，按距离近似排序后「开始打卡」。左侧地图不变，右侧为路线草稿、预留能力与「我的路线」。</p>
+                <p>Pick buildings, build a draft, then start check-in for an auto-ordered stop list. The map stays on the left; drafts and saved routes are on the right.</p>
                 <div class="meta">
-                  <b>自选站点</b>
-                  <b>路线规划</b>
-                  <b>保存 / 加载</b>
+                  <b>Pick stops</b>
+                  <b>Order</b>
+                  <b>Save / load</b>
                 </div>
               </div>
 
-              <p class="route-expand-hint">上方三条为主题介绍（不含规划流程）；需<strong>点击「自定义打卡路线」</strong>进入打卡与路线规划。</p>
+              <p class="route-expand-hint">The three cards above are previews only. Tap <strong>Custom check-in route</strong> to plan and check in.</p>
             </div>
 
             <div id="route-view-tour" class="route-view route-view-tour" hidden>
               <div class="route-tour-toolbar">
-                <button type="button" class="btn btn-secondary" id="btn-route-back" style="font-size:14px;padding:10px 16px;">← 返回选择路线</button>
+                <button type="button" class="btn btn-secondary" id="btn-route-back" style="font-size:14px;padding:10px 16px;">← Back to routes</button>
                 <span class="route-tour-theme-label" id="route-tour-theme-label" aria-live="polite"></span>
               </div>
               <div class="route-tour-stack">
                 <div class="card route-builder">
-                  <h3>路线草稿 · 自定义打卡</h3>
-                  <p class="route-builder-hint">在左侧地图点击楼栋 → 弹窗中选「加入路线」。至少保留 1 个站点后，选择起点并点击「开始打卡」生成顺序。室外步行请对照纸质/现场地图，本页<strong>仅提示建议楼层</strong>。</p>
+                  <h3>Route draft</h3>
+                  <p class="route-builder-hint">Tap a building on the map, then choose <strong>Add to route</strong> in the panel. Keep at least one stop, pick a start point, and tap <strong>Start check-in</strong> for an ordered list. Walking paths follow real signage; here we only suggest floor-level hints.</p>
                   <div id="route-draft-chips" class="route-chips" aria-live="polite"></div>
                   <div class="route-controls">
                     <div>
-                      <label for="route-start-select">起点（可选手动楼栋或 GPS 近似最近楼）</label>
-                      <select id="route-start-select" aria-label="打卡起点">
-                        <option value="__gps__">使用实时定位：自动选离我最近的已选楼栋作为起点</option>
+                      <label for="route-start-select">Start (manual building or nearest by GPS)</label>
+                      <select id="route-start-select" aria-label="Check-in start">
+                        <option value="__gps__">Use live location: start from the nearest selected building</option>
                       </select>
                     </div>
                     <div class="route-actions-row">
-                      <button type="button" class="btn btn-secondary" id="btn-clear-draft">清空草稿</button>
-                      <button type="button" class="btn btn-primary" id="btn-save-route">保存到我的路线</button>
-                      <button type="button" class="btn btn-ghost" id="btn-start-checkin">开始打卡</button>
+                      <button type="button" class="btn btn-secondary" id="btn-clear-draft">Clear draft</button>
+                      <button type="button" class="btn btn-primary" id="btn-save-route">Save to My routes</button>
+                      <button type="button" class="btn btn-ghost" id="btn-start-checkin">Start check-in</button>
                     </div>
                   </div>
                 </div>
 
-                <div class="route-placeholder">
-                  <strong>更多能力预留区</strong>
-                  语音导览、AR、成就徽章、社交分享等可接在此卡片下方，避免与核心路线逻辑耦合。
-                </div>
-
-                <aside class="card my-routes-aside" aria-label="我的路线">
-                  <h3>我的路线</h3>
-                  <p class="route-builder-hint" style="margin:0 0 12px;">保存当前草稿；点击「加载」可回填站点，确认后再点「开始打卡」。数据保存在本机浏览器。</p>
+                <aside class="card my-routes-aside" aria-label="My routes">
+                  <h3>My routes</h3>
+                  <p class="route-builder-hint" style="margin:0 0 12px;">Save your draft; use <strong>Load</strong> to restore stops, then <strong>Start check-in</strong>. Data stays in this browser.</p>
                   <div id="saved-routes-list"></div>
                 </aside>
               </div>
@@ -2081,9 +1933,9 @@
       <div class="container">
         <div class="section-title">
           <div>
-            <h2>核心功能设计</h2>
+            <h2>Core features</h2>
             <p>
-              课程要求系统实现至少 3 个 must-have playful features。本页已实现路线草稿、保存与近邻规划作为核心 playful flow；其余能力可在预留区扩展。
+              Draft routes, save and reload them, and get a playful nearest-neighbour stop order on the illustrated map—extend with audio, AR, or badges later if you like.
             </p>
           </div>
         </div>
@@ -2091,23 +1943,23 @@
         <div class="feature-grid">
           <div class="card feature-card">
             <div class="icon">🗺️</div>
-            <h3>智能路线推荐</h3>
-            <p>通过「自定义打卡路线」在地图上自选楼栋加入草稿，并按示意图近似距离生成打卡顺序；三条主题路线为场景介绍。</p>
+            <h3>Smart route ideas</h3>
+            <p>Use custom check-in to add buildings on the map and get an approximate visit order; the three themed cards set the mood.</p>
           </div>
           <div class="card feature-card">
             <div class="icon">📍</div>
-            <h3>位置打卡与数字集章</h3>
-            <p>在关键地点完成定位打卡后，可获得专属数字印章，最后生成个人校园导览纪念卡，强化完成感和分享欲。</p>
+            <h3>Check-in & digital stamps</h3>
+            <p>Check in at highlights and collect stamps toward a simple digital “passport” you can share.</p>
           </div>
           <div class="card feature-card">
             <div class="icon">🎧</div>
-            <h3>双语语音导览</h3>
-            <p>为国际访客与新生提供中英双语地点介绍，减少“只知道走、不知道看什么”的无效导览体验。</p>
+            <h3>Bilingual audio (ready to plug in)</h3>
+            <p>Room for EN/ZH narration so visitors understand what they’re looking at, not just where to walk.</p>
           </div>
           <div class="card feature-card">
             <div class="icon">🕹️</div>
-            <h3>互动任务与校园故事</h3>
-            <p>每到一个地点解锁小任务，例如“找到服务台”“回答一题校园知识”“拍摄指定视角照片”，提升趣味性与记忆点。</p>
+            <h3>Micro-tasks & stories</h3>
+            <p>Light prompts at each stop—find a desk, answer a trivia question, take a framed photo—to make the tour stick.</p>
           </div>
         </div>
       </div>
@@ -2117,8 +1969,8 @@
       <div class="container">
         <div class="section-title">
           <div>
-            <h2>用户体验亮点</h2>
-            <p>这个版本强调移动端优先、信息层次清晰和任务驱动式探索，也方便你们在 poster 中解释为什么它更 playful、更 human-centric。</p>
+            <h2>Experience highlights</h2>
+            <p>Mobile-first layout, clear hierarchy, and task-led exploration so the tour feels playful and human-centric.</p>
           </div>
         </div>
 
@@ -2127,27 +1979,27 @@
             <div class="icon">📱</div>
             <h3>Mobile First</h3>
             <ul>
-              <li>适合用户边走边看</li>
-              <li>按钮和卡片大，便于触摸</li>
-              <li>适合现场导览与快速浏览</li>
+              <li>Comfortable to use while walking</li>
+              <li>Large cards and buttons for touch</li>
+              <li>Works for on-site tours or quick browsing</li>
             </ul>
           </div>
           <div class="card">
             <div class="icon">🧠</div>
-            <h3>降低认知负担</h3>
+            <h3>Lower cognitive load</h3>
             <ul>
-              <li>把复杂校园拆成清晰路线</li>
-              <li>每个地点只展示最关键的信息</li>
-              <li>让第一次来的人也不会迷失</li>
+              <li>Campus split into clear routes</li>
+              <li>Only the essentials per place</li>
+              <li>First-time visitors stay oriented</li>
             </ul>
           </div>
           <div class="card">
             <div class="icon">🎁</div>
-            <h3>强化参与感</h3>
+            <h3>Stronger engagement</h3>
             <ul>
-              <li>任务机制带来即时反馈</li>
-              <li>集章奖励让过程更有目标</li>
-              <li>可生成分享式结果页面</li>
+              <li>Tasks give quick feedback</li>
+              <li>Stamps add a sense of progress</li>
+              <li>Shareable outcome screens</li>
             </ul>
           </div>
         </div>
@@ -2158,8 +2010,8 @@
       <div class="container">
         <div class="section-title">
           <div>
-            <h2>可视化进度示例</h2>
-            <p>这部分可以模拟用户完成导览后的成果展示，也很适合视频 demo 中做 ending scene。</p>
+            <h2>Progress snapshot</h2>
+            <p>Example stats after a tour—useful for demos and wrap-up screens.</p>
           </div>
         </div>
 
@@ -2167,19 +2019,19 @@
           <div class="progress-wrap">
             <div class="progress-card">
               <div class="num">4</div>
-              <p>已完成打卡点</p>
+              <p>Check-ins done</p>
             </div>
             <div class="progress-card">
               <div class="num">3</div>
-              <p>解锁数字印章</p>
+              <p>Stamps unlocked</p>
             </div>
             <div class="progress-card">
               <div class="num">2</div>
-              <p>完成互动任务</p>
+              <p>Tasks completed</p>
             </div>
             <div class="progress-card">
               <div class="num">88%</div>
-              <p>路线探索进度</p>
+              <p>Route progress</p>
             </div>
           </div>
         </div>
@@ -2193,22 +2045,22 @@
             <div>
               <h2 style="margin:0 0 12px;">Ready to Start Your Campus Adventure?</h2>
               <p style="margin:0 0 16px; line-height:1.8; max-width:680px;">
-                本网页是一个适合你们 B3 主题展示的高保真 HTML 原型版本。按照课程 brief，你们最终系统需要提供 live URL、响应式界面、核心功能实现，并在 portfolio 中说明设计过程、评估和迭代。
+                Start from the routes above, pick custom check-ins, and explore the map. This build is ready to host as a live URL with responsive layouts and playful flows baked in.
               </p>
               <div class="hero-actions">
-                <button class="btn btn-secondary" style="background:white;color:#17316f;" onclick="showMessage()">立即开始导览</button>
-                <a class="btn btn-secondary" style="background:rgba(255,255,255,0.12); color:white; border:1px solid rgba(255,255,255,0.3);" href="#about">查看项目说明</a>
+                <button class="btn btn-secondary" style="background:white;color:#17316f;" onclick="showMessage()">Start the tour</button>
+                <a class="btn btn-secondary" style="background:rgba(255,255,255,0.12); color:white; border:1px solid rgba(255,255,255,0.3);" href="#about">Read overview</a>
               </div>
             </div>
             <div>
               <div class="card" style="background:rgba(255,255,255,0.16); border:1px solid rgba(255,255,255,0.18); box-shadow:none;">
-                <h3 style="margin-top:0; color:white;">适合你们下一步继续加的内容</h3>
+                <h3 style="margin-top:0; color:white;">Ideas to extend</h3>
                 <ul>
-                  <li>真实校园图片或插画</li>
-                  <li>地点详情页弹窗</li>
-                  <li>定位或地图 API</li>
-                  <li>多语言切换按钮</li>
-                  <li>XR / AR 入口按钮</li>
+                  <li>More campus photos or illustrations</li>
+                  <li>Richer place detail panels</li>
+                  <li>Deeper map or indoor positioning APIs</li>
+                  <li>Language toggle</li>
+                  <li>XR / AR entry points</li>
                 </ul>
               </div>
             </div>
@@ -2226,7 +2078,7 @@
   </footer>
 
   <!-- Location Detail Modal -->
-  <div class="modal" id="location-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="地点详情弹窗">
+  <div class="modal" id="location-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Place details">
     <div class="modal-panel" role="document">
       <div class="modal-head">
         <div class="modal-title">
@@ -2236,18 +2088,18 @@
             <span class="modal-subtitle" id="location-subtitle" hidden></span>
           </div>
         </div>
-        <button class="icon-btn" type="button" id="location-close" aria-label="关闭">Esc</button>
+        <button class="icon-btn" type="button" id="location-close" aria-label="Close">Esc</button>
       </div>
       <div class="modal-body">
         <div class="modal-media">
-          <div class="carousel" id="location-carousel" aria-roledescription="carousel" aria-label="地点图片轮播">
+          <div class="carousel" id="location-carousel" aria-roledescription="carousel" aria-label="Place photos">
             <div class="carousel-dots" id="location-carousel-bars" aria-hidden="true"></div>
             <div class="carousel-viewport">
               <div class="carousel-track" id="location-carousel-track"></div>
             </div>
             <div class="carousel-controls" aria-hidden="false">
-              <button class="carousel-btn prev" type="button" id="location-carousel-prev" aria-label="上一张">‹</button>
-              <button class="carousel-btn next" type="button" id="location-carousel-next" aria-label="下一张">›</button>
+              <button class="carousel-btn prev" type="button" id="location-carousel-prev" aria-label="Previous slide">‹</button>
+              <button class="carousel-btn next" type="button" id="location-carousel-next" aria-label="Next slide">›</button>
             </div>
           </div>
         </div>
@@ -2278,27 +2130,23 @@
           </div>
           <div class="cta-row">
             <button class="btn btn-primary" type="button" id="location-primary">Join the Route</button>
-            <button class="btn btn-ghost" type="button" id="location-secondary">Start Clocking In</button>
-          </div>
-          <div class="carousel-hint">
-            每张楼的近景图请在 JS 的 LOCATIONS 对应条目中填写 images；简介与「历史与故事」字段也可直接编辑。
+            <button class="btn btn-ghost" type="button" id="location-secondary">Start check-in</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 打卡顺序规划（近邻近似 + 楼层提示） -->
-  <div class="modal plan-modal" id="route-plan-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="打卡路线规划">
+  <div class="modal plan-modal" id="route-plan-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Check-in route plan">
     <div class="modal-panel" role="document">
       <div class="modal-head">
         <div class="modal-title">
-          <span class="pill" id="route-plan-pill">📍 规划结果</span>
+          <span class="pill" id="route-plan-pill">📍 Plan</span>
           <div>
-            <strong id="route-plan-title">今日打卡顺序</strong>
+            <strong id="route-plan-title">Today’s check-in order</strong>
           </div>
         </div>
-        <button class="icon-btn" type="button" id="route-plan-close" aria-label="关闭">Esc</button>
+        <button class="icon-btn" type="button" id="route-plan-close" aria-label="Close">Esc</button>
       </div>
       <div class="modal-body" style="grid-template-columns:1fr;">
         <div>
@@ -2306,8 +2154,8 @@
           <ol class="plan-step-list" id="route-plan-steps"></ol>
           <p class="plan-disclaimer" id="route-plan-disclaimer"></p>
           <div class="cta-row" style="margin-top:16px;">
-            <button type="button" class="btn btn-primary" id="route-plan-confirm">从第一站开始打卡</button>
-            <button type="button" class="btn btn-ghost" id="route-plan-back">返回编辑</button>
+            <button type="button" class="btn btn-primary" id="route-plan-confirm">Start at first stop</button>
+            <button type="button" class="btn btn-ghost" id="route-plan-back">Back to edit</button>
           </div>
         </div>
       </div>
@@ -2317,20 +2165,20 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script>
     const ROUTE_THEME_LABELS = {
-      orientation: "新生入门指引",
-      visitor: "外来访客指引",
-      challenge: "盲盒路线",
-      custom: "自定义打卡路线"
+      orientation: "New student",
+      visitor: "Visitor",
+      challenge: "Challenge",
+      custom: "Custom check-in"
     };
 
     function updateRouteTourThemeLabel(theme) {
       const el = document.getElementById("route-tour-theme-label");
       if (!el) return;
       const name = ROUTE_THEME_LABELS[theme] || theme || "";
-      el.textContent = name ? `当前主题：${name}` : "";
+      el.textContent = name ? `Theme: ${name}` : "";
     }
 
-    /** 路线区「选主题」与「导览编辑」两页切换（左侧地图 DOM 不变，仅换右侧栏） */
+    /** Route section: pick theme vs. tour editor (map column unchanged). */
     function setRoutePageView(page) {
       const pick = document.getElementById("route-view-pick");
       const tour = document.getElementById("route-view-tour");
@@ -2355,7 +2203,7 @@
         updateRouteTourThemeLabel("custom");
         setRoutePageView("tour");
       }
-      /* 新生 / 外来访客 / 探索挑战：仅选中卡片，不进入规划导览页 */
+      /* Themed routes: selection only, no tour editor */
     }
 
     document.getElementById("btn-route-back")?.addEventListener("click", () => {
@@ -2364,10 +2212,10 @@
     });
 
     function showMessage() {
-      alert('欢迎来到 XJTLU Campus Tour Guide！这里可以继续接入真实地图、地点详情、打卡系统和 AR 功能。');
+      alert("Welcome to XJTLU Campus Tour Guide. Explore routes and the map—you can extend this with deeper maps, AR, and more.");
     }
 
-    // ===== Leaflet + Geolocation（OpenStreetMap 底图）=====
+    // ===== Leaflet + geolocation (OpenStreetMap) =====
     (function initLeafletLiveMap() {
       if (typeof L === "undefined") return;
 
@@ -2381,7 +2229,7 @@
 
       if (!mapEl || !panelIllustrated || !panelLive || !tabBtns.length) return;
 
-      /** 西浦独墅湖校区大致中心（可按实测微调） */
+      /** Approximate campus centre (tune if needed) */
       const XJTLU_CENTER = [31.2718, 120.7415];
       const DEFAULT_ZOOM = 16;
 
@@ -2402,7 +2250,7 @@
           maxZoom: 19,
           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
-        L.marker(XJTLU_CENTER).addTo(map).bindPopup("西交利物浦大学 · 参考位置（可微调坐标）");
+        L.marker(XJTLU_CENTER).addTo(map).bindPopup("XJTLU · reference point");
         return map;
       }
 
@@ -2412,7 +2260,7 @@
           watchId = null;
         }
         hasFirstFix = false;
-        setStatus("已停止跟踪");
+        setStatus("Tracking stopped");
       }
 
       function updateUserPosition(lat, lng, accuracy) {
@@ -2444,7 +2292,7 @@
         } else {
           map.panTo([lat, lng], { animate: false });
         }
-        setStatus(`实时位置 · 精度约 ${Math.round(accM)} m`);
+        setStatus(`Live position · accuracy ~ ${Math.round(accM)} m`);
       }
 
       function onGeoSuccess(pos) {
@@ -2455,16 +2303,16 @@
       function onGeoError(err) {
         const code = err && err.code;
         const msg =
-          code === 1 ? "已拒绝定位权限，请在浏览器设置中允许本站使用位置。" :
-          code === 2 ? "暂时无法获取位置（设备或信号问题）。" :
-          code === 3 ? "定位超时，请到室外重试或检查权限。" :
-          "无法获取位置。";
+          code === 1 ? "Location permission denied. Allow this site in browser settings." :
+          code === 2 ? "Position unavailable (device or signal)." :
+          code === 3 ? "Location timed out—try outdoors or check permissions." :
+          "Could not get location.";
         setStatus(msg);
       }
 
       function startWatch() {
         if (!navigator.geolocation) {
-          setStatus("当前浏览器不支持地理定位。");
+          setStatus("Geolocation is not supported in this browser.");
           return;
         }
         initMap();
@@ -2475,7 +2323,7 @@
           maximumAge: 0,
           timeout: 25000
         });
-        setStatus("正在持续定位…");
+        setStatus("Tracking location…");
       }
 
       locateBtn?.addEventListener("click", () => {
@@ -2510,267 +2358,263 @@
       });
     })();
 
-    // ===== High-fidelity data (replace images here) =====
-    // TODO: 把你们的真实校园照片放到项目目录里（例如：CPT208/assets/campus/xxx.jpg），并替换下面的 src 路径。
-    // 你也可以直接用线上 URL，但线下展示更建议本地资源，避免网络问题。
     const CAMPUS_PHOTOS = [
       {
-        src: "assets/campus/central-building-1.jpg", // TODO: 替换为真实照片路径
+        src: "assets/campus/central-building-1.jpg",
         title: "Central Building · Campus Story",
-        note: "建议放一张能体现校园“第一眼印象”的建筑外观照片。",
+        note: "A strong “first look” facade works well here.",
         alt: "Central Building photo"
       },
       {
-        src: "assets/campus/library-1.jpg", // TODO: 替换为真实照片路径
+        src: "assets/campus/library-1.jpg",
         title: "Library · Study Hub",
-        note: "可用图书馆外观或学习区环境照，强调氛围与功能。",
+        note: "Exterior or a busy study zone to show atmosphere.",
         alt: "Library photo"
       },
       {
-        src: "assets/campus/student-centre-1.jpg", // TODO: 替换为真实照片路径
+        src: "assets/campus/student-centre-1.jpg",
         title: "Student Centre · Events & Food",
-        note: "适合用人流/活动/餐饮等生活化场景照片。",
+        note: "Life on campus—events, clubs, or food courts.",
         alt: "Student Centre photo"
       },
       {
-        src: "assets/campus/sports-area-1.jpg", // TODO: 替换为真实照片路径
+        src: "assets/campus/sports-area-1.jpg",
         title: "Sports Area · Finish Reward",
-        note: "建议用运动场地的广角，作为“挑战路线”收尾画面。",
+        note: "A wide sports shot works as a challenge-route finale.",
         alt: "Sports Area photo"
       }
     ];
 
-    // 校园地图楼栋：images 请替换为你们拍摄的近景路径（assets/locations/楼栋代号-序号.jpg）
     const LOCATIONS = {
       ls: {
         id: "ls",
-        type: "📍 北校区",
+        type: "📍 North campus",
         title: "Life Sciences Building",
-        subtitle: "生命科学楼",
+        subtitle: "Life Sciences",
         desc: "A seven-storey hub for industry-integrated education, combining authentic industrial scenarios with immersive virtual teaching environments. The building features a 2,200 m² high-rise laboratory animal centre and supports hands-on learning across teaching, research, and applied scientific training.",
         story: "The LS building is divided into the north building and the south building. LSS is the south building and LSN is the north building. It provides professional laboratories for the students of the School of Pharmacy.",
         tags: ["Lab", "North Campus", "Science"],
-        bestFor: "理工实验课 · 科研参观",
-        time: "5–8 分钟",
-        task: "找到一层导览牌并拍照打卡",
-        floorHint: "主入口与实验室分区通常需先看一层总平面图；具体楼层以电梯旁索引为准。",
-        access: "请按实地无障碍设施填写",
+        bestFor: "STEM labs · research visits",
+        time: "5–8 min",
+        task: "Photo the lobby directory on the ground floor",
+        floorHint: "Check the ground-floor plan before labs; use elevator indexes on site.",
+        access: "Verify lifts and ramps on site",
         images: [
-          { src: "project/building/ls/3.jpg", alt: "生命科学楼" },
-          { src: "project/building/ls/4.jpg", alt: "生命科学楼" },
-          { src: "project/building/ls/1.jpg", alt: "生命科学楼内部" },
-          { src: "project/building/ls/2.jpg", alt: "生命科学楼内部" }
+          { src: "project/building/ls/3.jpg", alt: "Life Sciences Building" },
+          { src: "project/building/ls/4.jpg", alt: "Life Sciences Building" },
+          { src: "project/building/ls/1.jpg", alt: "Life Sciences interior" },
+          { src: "project/building/ls/2.jpg", alt: "Life Sciences interior" }
         ]
       },
       fb: {
         id: "fb",
-        type: "📍 中校区",
+        type: "📍 Central campus",
         title: "Foundation Building",
-        subtitle: "基础楼",
+        subtitle: "Foundation Building",
         desc: "A core facility supporting undergraduate general education and foundational discipline teaching, and a major venue for EAP classes and daily instruction.",
         story: "FB offers many small classrooms as well as open discussion areas. Meanwhile, the ground floor houses a convenience store and a Subway.",
         tags: ["Teaching", "Core Courses", "Landmark"],
-        bestFor: "新生 · 基础课导航",
-        time: "5–10 分钟",
-        task: "在楼前拍一张“开学第一天”风格照片",
-        floorHint: "公共课教室分布较分散，建议从一层主入口进入后查看楼层分布图。",
-        access: "请按实地无障碍设施填写",
+        bestFor: "New students · core courses",
+        time: "5–10 min",
+        task: "Take a “first day of term” photo at the entrance",
+        floorHint: "Classrooms are spread out—enter via the main ground floor and read the directory.",
+        access: "Verify lifts and ramps on site",
         images: [
-          { src: "project/building/fb/1.jpg", alt: "基础楼" },
-          { src: "project/building/fb/2.jpg", alt: "基础楼入口" }
+          { src: "project/building/fb/1.jpg", alt: "Foundation Building" },
+          { src: "project/building/fb/2.jpg", alt: "Foundation Building entrance" }
         ]
       },
       cb: {
         id: "cb",
         type: "📍 Landmark",
         title: "Central Building",
-        subtitle: "中心楼",
+        subtitle: "Central Building",
         desc: "As the campus core functional zone, it brings together career development services, academic support, and student leisure in one integrated destination.",
         story: "The 3rd and 10th floors of the library all provide student study desks. In addition, the library also has a Student Counselling Center, Student Affairs Office, Student Admission and Career Development Office, Student IT Helpdesk, MUSEUM, REGISTRT, XJTLU Career Center, XJTLU Alumni Association, and One-stop Student Service Center.",
         tags: ["Iconic", "Campus Story", "Photo Spot"],
-        bestFor: "全体访客 · 校园叙事主线",
-        time: "8–12 分钟",
-        task: "回答一题与中心楼相关的小知识并盖章",
-        floorHint: "中庭与连廊多从一层进入；高层观景台或功能区请按现场开放范围与指示牌。",
-        access: "电梯/坡道（请核实）",
+        bestFor: "All visitors · main story stop",
+        time: "8–12 min",
+        task: "Answer one trivia question about the Central Building",
+        floorHint: "Atrium and bridges often start at ground level; follow on-site signs for upper levels.",
+        access: "Lifts and ramps—verify on site",
         images: [
-          { src: "project/building/cb/1.jpg", alt: "中心楼外观" },
-          { src: "project/building/cb/2.jpg", alt: "中心楼外观" },
-          { src: "project/building/cb/3.jpg", alt: "中心楼细节" },
-          { src: "project/building/cb/4.jpg", alt: "中心楼细节" },
-          { src: "project/building/cb/5.jpg", alt: "中心楼细节" },
-          { src: "project/building/cb/6.jpg", alt: "中心楼细节" },
-          { src: "project/building/cb/7.jpg", alt: "中心楼细节" },
-          { src: "project/building/cb/8.jpg", alt: "中心楼细节" },
-          { src: "project/building/cb/9.jpg", alt: "中心楼细节" },
-          { src: "project/building/cb/10.jpg", alt: "中心楼细节" },
-          { src: "project/building/cb/11.jpg", alt: "中心楼细节" }
+          { src: "project/building/cb/1.jpg", alt: "Central Building exterior" },
+          { src: "project/building/cb/2.jpg", alt: "Central Building exterior" },
+          { src: "project/building/cb/3.jpg", alt: "Central Building detail" },
+          { src: "project/building/cb/4.jpg", alt: "Central Building detail" },
+          { src: "project/building/cb/5.jpg", alt: "Central Building detail" },
+          { src: "project/building/cb/6.jpg", alt: "Central Building detail" },
+          { src: "project/building/cb/7.jpg", alt: "Central Building detail" },
+          { src: "project/building/cb/8.jpg", alt: "Central Building detail" },
+          { src: "project/building/cb/9.jpg", alt: "Central Building detail" },
+          { src: "project/building/cb/10.jpg", alt: "Central Building detail" },
+          { src: "project/building/cb/11.jpg", alt: "Central Building detail" }
         ]
       },
       sa: {
         id: "sa",
-        type: "📍 理科组团",
+        type: "📍 Science cluster",
         title: "Science Building A",
-        subtitle: "理科楼 A",
+        subtitle: "Science A",
         desc: "Primarily accommodates the School of Science while providing laboratories, offices, and lecture theatres for multi-disciplinary use.",
         story: "To access first-floor classrooms (such as SA169 or other rooms starting &ldquo;1&rdquo), please enter through the West Entrance, which faces the CB building. The East Entrance leads directly to the elevators.",
         tags: ["Science", "Cluster A"],
-        bestFor: "理工专业课",
-        time: "5–8 分钟",
-        task: "在下沉广场找到理科楼标识合影",
-        access: "请按实地填写",
+        bestFor: "STEM classes",
+        time: "5–8 min",
+        task: "Pose with the science cluster sign in the plaza",
+        access: "Verify on site",
         images: [
-          { src: "project/building/sa/sa1.jpg", alt: "理科楼 A" },
-          { src: "project/building/sa/sa2.jpg", alt: "理科楼 A" },
-          { src: "project/building/sa/sa3.jpg", alt: "理科楼 A" },
-          { src: "project/building/sa/sa4.jpg", alt: "理科楼 A" }
+          { src: "project/building/sa/sa1.jpg", alt: "Science Building A" },
+          { src: "project/building/sa/sa2.jpg", alt: "Science Building A" },
+          { src: "project/building/sa/sa3.jpg", alt: "Science Building A" },
+          { src: "project/building/sa/sa4.jpg", alt: "Science Building A" }
         ]
       },
       sb: {
         id: "sb",
-        type: "📍 理科组团",
+        type: "📍 Science cluster",
         title: "Science Building B",
-        subtitle: "理科楼 B",
+        subtitle: "Science B",
         desc: "Primarily accommodates the School of Science while providing laboratories, offices, and lecture theatres for multi-disciplinary use.",
         story: "To access first-floor classrooms (such as SB123 or other rooms starting &ldquo;1&rdquo), please enter through the East Entrance, which faces the North Foundation. The West Entrance leads directly to the elevators.",
         tags: ["Science", "Cluster B"],
-        bestFor: "实验与研讨课",
-        time: "5–8 分钟",
-        task: "记录一张走廊或楼梯间的光影照片",
-        access: "请按实地填写",
+        bestFor: "Labs and seminars",
+        time: "5–8 min",
+        task: "Capture light and shadow in a corridor or stairwell",
+        access: "Verify on site",
         images: [
-          { src: "project/building/sb/sb1.jpg", alt: "理科楼 B" },
-          { src: "project/building/sb/sb2.jpg", alt: "理科楼 B" },
-          { src: "project/building/sb/sb3.jpg", alt: "理科楼 B" },
-          { src: "project/building/sb/sb4.jpg", alt: "理科楼 B" }
+          { src: "project/building/sb/sb1.jpg", alt: "Science Building B" },
+          { src: "project/building/sb/sb2.jpg", alt: "Science Building B" },
+          { src: "project/building/sb/sb3.jpg", alt: "Science Building B" },
+          { src: "project/building/sb/sb4.jpg", alt: "Science Building B" }
         ]
       },
       sc: {
         id: "sc",
-        type: "📍 理科组团",
+        type: "📍 Science cluster",
         title: "Science Building C",
-        subtitle: "理科楼 C",
+        subtitle: "Science C",
         desc: "Primarily accommodates the School of Science while providing laboratories, offices, and lecture theatres for multi-disciplinary use.",
         story: "To access first-floor classrooms (such as SC169 or other rooms starting &ldquo;1&rdquo), please enter through the West Entrance, which faces the CB building. The East Entrance leads directly to the elevators.",
         tags: ["Science", "Cluster C"],
-        bestFor: "小组讨论 · 自习转场",
-        time: "5–8 分钟",
-        task: "找到一个教室门牌并朗读课程名（趣味向）",
-        access: "请按实地填写",
+        bestFor: "Group work · study hops",
+        time: "5–8 min",
+        task: "Read a room plate aloud for a fun audio clip",
+        access: "Verify on site",
         images: [
-          { src: "project/building/sc/sc1.jpg", alt: "理科楼 C" },
-          { src: "project/building/sc/sc2.jpg", alt: "理科楼 C" },
-          { src: "project/building/sc/sc3.jpg", alt: "理科楼 C" },
-          { src: "project/building/sc/sc4.jpg", alt: "理科楼 C" }
+          { src: "project/building/sc/sc1.jpg", alt: "Science Building C" },
+          { src: "project/building/sc/sc2.jpg", alt: "Science Building C" },
+          { src: "project/building/sc/sc3.jpg", alt: "Science Building C" },
+          { src: "project/building/sc/sc4.jpg", alt: "Science Building C" }
         ]
       },
       sd: {
         id: "sd",
-        type: "📍 理科组团",
+        type: "📍 Science cluster",
         title: "Science Building D",
-        subtitle: "理科楼 D",
+        subtitle: "Science D",
         desc: "Primarily accommodates the School of Science while providing laboratories, offices, and lecture theatres for multi-disciplinary use.",
         story: " To access first-floor classrooms (such as SD102 or other rooms starting &ldquo;1&rdquo), please enter through the East Entrance, which faces the North Foundation. The West Entrance leads directly to the elevators.",
         tags: ["Science", "Cluster D"],
-        bestFor: "跨楼动线",
-        time: "5–8 分钟",
-        task: "从 SA 步行到 SD 计时截图（轻量挑战）",
-        access: "请按实地填写",
+        bestFor: "Moving between clusters",
+        time: "5–8 min",
+        task: "Time your walk from SA to SD (light challenge)",
+        access: "Verify on site",
         images: [
-          { src: "project/building/sd/sd1.jpg", alt: "理科楼 D" },
-          { src: "project/building/sd/sd2.jpg", alt: "理科楼 D" },
-          { src: "project/building/sd/sd4.jpg", alt: "理科楼 D" }
+          { src: "project/building/sd/sd1.jpg", alt: "Science Building D" },
+          { src: "project/building/sd/sd2.jpg", alt: "Science Building D" },
+          { src: "project/building/sd/sd4.jpg", alt: "Science Building D" }
         ]
       },
       pb: {
         id: "pb",
-        type: "📍 公共服务",
+        type: "📍 Public services",
         title: "Public Building",
-        subtitle: "公共楼",
+        subtitle: "Public Building",
         desc: "Functions as a central academic facility featuring large-capacity lecture theatres, classrooms, offices, and meeting rooms.",
         story: "The entrance is located on the east side, adjacent to the shop.",
         tags: ["Public", "Events", "Services"],
-        bestFor: "家长参观 · 活动资讯",
-        time: "6–10 分钟",
-        task: "浏览一层公告栏并记下一场活动",
-        access: "请按实地填写",
+        bestFor: "Guests · event info",
+        time: "6–10 min",
+        task: "Skim the ground-floor notice board and note one event",
+        access: "Verify on site",
         images: [
-          { src: "project/building/pb/pb1.jpg", alt: "公共楼" },
-          { src: "project/building/pb/pb2.jpg", alt: "公共楼" },
-          { src: "project/building/pb/pb3.jpg", alt: "公共楼" }
+          { src: "project/building/pb/pb1.jpg", alt: "Public Building" },
+          { src: "project/building/pb/pb2.jpg", alt: "Public Building" },
+          { src: "project/building/pb/pb3.jpg", alt: "Public Building" }
         ]
       },
       ma: {
         id: "ma",
-        type: "📍 数学系馆",
+        type: "📍 Mathematics",
         title: "Mathematics Building A",
-        subtitle: "数学楼 A",
+        subtitle: "Mathematics A",
         desc: "Contains offices, instructional classrooms, and lecture theatres, primarily supporting the School of Mathematics and Physics.",
         story: "MA and MB are interconnected, allowing access to the other building from every floor.",
         tags: ["Math", "Academic"],
-        bestFor: "数学/统计课程",
-        time: "5–8 分钟",
-        task: "在黑板或屏幕前拍一张“公式氛围感”照片",
-        access: "请按实地填写",
-        images: [{ src: "project/building/ma/ma1.jpg", alt: "数学楼 A" },
-                { src: "project/building/ma/ma2.jpg", alt: "数学楼 A" }
+        bestFor: "Math and statistics",
+        time: "5–8 min",
+        task: "Snap a “formula mood” photo at a board or screen",
+        access: "Verify on site",
+        images: [{ src: "project/building/ma/ma1.jpg", alt: "Mathematics Building A" },
+                { src: "project/building/ma/ma2.jpg", alt: "Mathematics Building A" }
                 ]
       },
       mb: {
         id: "mb",
-        type: "📍 数学系馆",
+        type: "📍 Mathematics",
         title: "Mathematics Building B",
-        subtitle: "数学楼 B",
+        subtitle: "Mathematics B",
         desc: "Contains offices, instructional classrooms, and lecture theatres, primarily supporting the School of Mathematics and Physics.",
         story: "MA and MB are interconnected, allowing access to the other building from every floor.",
         tags: ["Math", "Academic"],
-        bestFor: "研讨课 · 答疑",
-        time: "5–8 分钟",
-        task: "与同学完成一道心算小挑战",
-        access: "请按实地填写",
+        bestFor: "Seminars · office hours",
+        time: "5–8 min",
+        task: "Do a quick mental-math challenge with a friend",
+        access: "Verify on site",
         images: [
-          { src: "project/building/mb/mb1.jpg", alt: "数学楼 B" },
-          { src: "project/building/mb/mb2.jpg", alt: "数学楼 B" },
-          { src: "project/building/mb/mb3.jpg", alt: "数学楼 B" },
-          { src: "project/building/mb/mb4.jpg", alt: "数学楼 B" }
+          { src: "project/building/mb/mb1.jpg", alt: "Mathematics Building B" },
+          { src: "project/building/mb/mb2.jpg", alt: "Mathematics Building B" },
+          { src: "project/building/mb/mb3.jpg", alt: "Mathematics Building B" },
+          { src: "project/building/mb/mb4.jpg", alt: "Mathematics Building B" }
         ]
       },
       ee: {
         id: "ee",
-        type: "📍 工科",
+        type: "📍 Engineering",
         title: "Electrical & Electronic Engineering",
-        subtitle: "电子与电气工程楼",
+        subtitle: "EEE Building",
         desc: "Features engineering laboratories, classrooms, and lecture halls, serving as a primary facility for the School of Advanced Technology.",
         story: "EE and EB are connected. Transit to the adjacent building is available on specific floors.",
         tags: ["EEE", "Lab", "Innovation"],
-        bestFor: "工科访学 · 实验室参观",
-        time: "8–12 分钟",
-        task: "找到一个“高压危险”或安全标识并简述含义",
-        access: "实验区需预约（请核实）",
+        bestFor: "Engineering visits · lab tours",
+        time: "8–12 min",
+        task: "Find a high-voltage or safety sign and explain it briefly",
+        access: "Lab areas may need booking—verify",
         images: [
-          { src: "project/building/ee/ee1.jpg", alt: "电子与电气工程楼" },
-          { src: "project/building/ee/ee2.jpg", alt: "电子与电气工程楼" },
-          { src: "project/building/ee/ee3.jpg", alt: "电子与电气工程楼" },
-          { src: "project/building/ee/ee4.jpg", alt: "电子与电气工程楼" }
+          { src: "project/building/ee/ee1.jpg", alt: "EEE Building" },
+          { src: "project/building/ee/ee2.jpg", alt: "EEE Building" },
+          { src: "project/building/ee/ee3.jpg", alt: "EEE Building" },
+          { src: "project/building/ee/ee4.jpg", alt: "EEE Building" }
         ]
       },
       eb: {
         id: "eb",
-        type: "📍 工科",
+        type: "📍 Engineering",
         title: "Engineering Building",
-        subtitle: "工科楼",
+        subtitle: "Engineering Building",
         desc: "Provides classrooms and lecture theatres alongside specialized studios for the Departments of Civil Engineering and Industrial Design.",
         story: "EE and EB are connected. Transit to the adjacent building is available on specific floors.",
         tags: ["Engineering", "Project-based"],
-        bestFor: "项目制课程 · 工坊",
-        time: "8–12 分钟",
-        task: "拍摄一张体现“动手做”的场景（需尊重隐私）",
-        access: "请按实地填写",
+        bestFor: "Project studios · workshops",
+        time: "8–12 min",
+        task: "Capture a hands-on making moment (respect privacy)",
+        access: "Verify on site",
         images: [
-          { src: "project/building/eb/eb1.jpg", alt: "工科楼" },
-          { src: "project/building/eb/eb2.jpg", alt: "工科楼" },
-          { src: "project/building/eb/eb3.jpg", alt: "工科楼" },
-          { src: "project/building/eb/eb4.jpg", alt: "工科楼" }
+          { src: "project/building/eb/eb1.jpg", alt: "Engineering Building" },
+          { src: "project/building/eb/eb2.jpg", alt: "Engineering Building" },
+          { src: "project/building/eb/eb3.jpg", alt: "Engineering Building" },
+          { src: "project/building/eb/eb4.jpg", alt: "Engineering Building" }
         ]
       },
       ir: {
@@ -2924,7 +2768,7 @@
       return (s || "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#39;");
     }
 
-    /** 与示意图热点一致的相对坐标（%），用于近似距离排序（非道路最短路） */
+    /** Hotspot positions as % on illustrated map for approximate ordering (not road shortest path) */
     const BUILDING_MAP_POS = {
       ls: [32, 22], fb: [41, 42], cb: [42, 56], sa: [54, 51], sb: [54, 55], sc: [54, 59], sd: [54, 63],
       pb: [61, 53], ma: [67, 53], mb: [67, 57], ee: [61, 63], eb: [68, 61], ir: [54, 73], ia: [63, 75],
@@ -2932,7 +2776,7 @@
     };
 
     const DEFAULT_FLOOR_HINT =
-      "到达后查看一层总索引或电梯旁楼层指引；步行路径请对照校园地图，本导览仅作楼层级提示。";
+      "On arrival, check the ground-floor index or elevator directory. Walking routes follow real maps—this app only hints at floors.";
 
     const LS_ROUTES_KEY = "xjtlu_campus_tour_routes_v1";
 
@@ -3019,10 +2863,10 @@
 
       function themeName(r) {
         const m = {
-          orientation: "新生路线",
-          visitor: "外来访客",
-          challenge: "探索挑战路线",
-          custom: "自定义打卡路线"
+          orientation: "New student route",
+          visitor: "Visitor route",
+          challenge: "Challenge route",
+          custom: "Custom check-in"
         };
         return m[r] || r;
       }
@@ -3034,12 +2878,12 @@
         sel.innerHTML = "";
         const o0 = document.createElement("option");
         o0.value = "__gps__";
-        o0.textContent = "使用实时定位：自动选离我最近的已选楼栋作为起点";
+        o0.textContent = "Use live location: start from the nearest selected building";
         sel.appendChild(o0);
         draft.forEach((id) => {
           const o = document.createElement("option");
           o.value = id;
-          o.textContent = `从 ${routeLabel(id)} 出发`;
+          o.textContent = `Start from ${routeLabel(id)}`;
           sel.appendChild(o);
         });
         const ok = [...sel.options].some((opt) => opt.value === preserved);
@@ -3050,12 +2894,12 @@
         const el = chipsEl();
         if (!el) return;
         if (!draft.length) {
-          el.innerHTML = '<span style="color:var(--muted);font-size:13px;">暂无站点，请在地图点击楼栋并「加入路线」</span>';
+          el.innerHTML = '<span style="color:var(--muted);font-size:13px;">No stops yet—tap a building and choose Add to route.</span>';
         } else {
           el.innerHTML = draft
             .map(
               (id) =>
-                `<span class="route-chip">${escapeHtml(routeLabel(id))}<button type="button" data-remove="${escapeHtml(id)}" aria-label="移除">×</button></span>`
+                `<span class="route-chip">${escapeHtml(routeLabel(id))}<button type="button" data-remove="${escapeHtml(id)}" aria-label="Remove">×</button></span>`
             )
             .join("");
           el.querySelectorAll("button[data-remove]").forEach((btn) => {
@@ -3074,7 +2918,7 @@
         if (!el) return;
         const list = loadSavedRoutes();
         if (!list.length) {
-          el.innerHTML = '<p style="margin:0;color:var(--muted);font-size:13px;">暂无保存，可先编辑草稿后点「保存到我的路线」。</p>';
+          el.innerHTML = '<p style="margin:0;color:var(--muted);font-size:13px;">Nothing saved yet—edit a draft, then Save to My routes.</p>';
           return;
         }
         el.innerHTML = list
@@ -3082,11 +2926,11 @@
             const stops = (item.stops || []).map(routeLabel).join(" → ");
             const t = item.savedAt ? new Date(item.savedAt).toLocaleString() : "";
             return `<div class="saved-route-item" data-saved-id="${escapeHtml(item.id)}">
-            <strong>${escapeHtml(item.name || "未命名路线")}</strong>
-            <small>${escapeHtml(themeName(item.routeType))} · ${escapeHtml(t)}<br>${escapeHtml(stops || "（无站点）")}</small>
+            <strong>${escapeHtml(item.name || "Untitled route")}</strong>
+            <small>${escapeHtml(themeName(item.routeType))} · ${escapeHtml(t)}<br>${escapeHtml(stops || "(no stops)")}</small>
             <div class="saved-route-actions">
-              <button type="button" class="btn-tiny" data-load="${escapeHtml(item.id)}">加载到草稿</button>
-              <button type="button" class="btn-tiny danger" data-del="${escapeHtml(item.id)}">删除</button>
+              <button type="button" class="btn-tiny" data-load="${escapeHtml(item.id)}">Load to draft</button>
+              <button type="button" class="btn-tiny danger" data-del="${escapeHtml(item.id)}">Delete</button>
             </div>
           </div>`;
           })
@@ -3134,11 +2978,11 @@
       }
 
       function saveDraft() {
-        const name = window.prompt("为这条路线命名（将保存当前草稿与主题）", `我的路线 ${new Date().toLocaleString()}`);
+        const name = window.prompt("Name this route (saves current draft and theme)", `My route ${new Date().toLocaleString()}`);
         if (name === null) return;
         const item = {
           id: typeof crypto !== "undefined" && crypto.randomUUID ? crypto.randomUUID() : String(Date.now()),
-          name: name.trim() || "未命名路线",
+          name: name.trim() || "Untitled route",
           routeType: theme,
           stops: [...draft],
           savedAt: new Date().toISOString()
@@ -3190,12 +3034,12 @@
         const disclaimer = document.getElementById("route-plan-disclaimer");
         const title = document.getElementById("route-plan-title");
         if (!modal || !stepsEl) return;
-        title.textContent = "今日打卡顺序（近到远近似）";
+        title.textContent = "Today’s order (nearest-neighbour on map)";
         if (intro) intro.textContent = startNote || "";
         stepsEl.innerHTML = ordered
           .map((id, idx) => {
             const loc = LOCATIONS[id];
-            const name = loc ? `${loc.subtitle || loc.title}（${String(id).toUpperCase()}）` : id;
+            const name = loc ? `${loc.subtitle || loc.title} (${String(id).toUpperCase()})` : id;
             const floorHint = (loc && loc.floorHint) || DEFAULT_FLOOR_HINT;
             return `<li class="plan-step">
             <div class="plan-step-num">${idx + 1}</div>
@@ -3208,7 +3052,7 @@
           .join("");
         if (disclaimer) {
           disclaimer.textContent =
-            "说明：顺序依据校园示意图上各楼位置做直线近似距离（最近邻贪心），不等同于道路导航最短路径。跨楼步行请以现场地图与指示牌为准。";
+            "Order is a greedy nearest-neighbour on the illustrated map—not turn-by-turn navigation. Follow real paths and signs between buildings.";
         }
         modal.setAttribute("aria-hidden", "false");
         document.body.style.overflow = "hidden";
@@ -3216,14 +3060,14 @@
 
       function runPlanning() {
         if (!draft.length) {
-          window.alert("请先在地图选择楼栋并加入路线。");
+          window.alert("Add at least one building from the map to your route first.");
           return;
         }
         resolveStartId((startId) => {
           if (!startId) return;
           const ordered = orderGreedyNearest(startId, draft);
           const startLabel = routeLabel(startId);
-          openPlanModal(ordered, `起点：${startLabel}。以下按示意图近似距离由近到远排列。`);
+          openPlanModal(ordered, `Start: ${startLabel}. Stops below are ordered by approximate map distance.`);
         });
       }
 
@@ -3241,7 +3085,7 @@
         document.getElementById("btn-clear-draft")?.addEventListener("click", () => clearDraft());
         document.getElementById("btn-save-route")?.addEventListener("click", () => {
           if (!draft.length) {
-            window.alert("草稿为空，无法保存。");
+            window.alert("Draft is empty—nothing to save.");
             return;
           }
           saveDraft();
@@ -3306,7 +3150,7 @@
           const src = escapeHtml(s.src || "");
           return `
             <div class="carousel-slide">
-              <img src="${src}" alt="${alt}" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(35,71,161,0.12), rgba(90,166,255,0.20))'; this.parentElement.innerHTML += '<div style=&quot;position:absolute; inset:0; display:grid; place-items:center; padding:22px; text-align:center; color: rgba(15,23,42,0.76); font-weight:800; letter-spacing:-0.01em;&quot;>请在 JS 的图片配置里替换为真实校园照片</div>';" />
+              <img src="${src}" alt="${alt}" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(35,71,161,0.12), rgba(90,166,255,0.20))'; this.parentElement.innerHTML += '<div style=&quot;position:absolute; inset:0; display:grid; place-items:center; padding:22px; text-align:center; color: rgba(15,23,42,0.76); font-weight:800; letter-spacing:-0.01em;&quot;>Image missing—add your campus photo path</div>';" />
               ${caption ? `
                 <div class="carousel-overlay">
                   <div class="carousel-caption">
@@ -3407,7 +3251,7 @@
         const alt = escapeHtml(s.alt || s.title || "thumb");
         const src = escapeHtml(s.src || "");
         return `
-          <button class="thumb" type="button" data-idx="${idx}" aria-current="${idx === 0 ? "true" : "false"}" aria-label="切换到第 ${idx + 1} 张">
+          <button class="thumb" type="button" data-idx="${idx}" aria-current="${idx === 0 ? "true" : "false"}" aria-label="Go to slide ${idx + 1}">
             <img src="${src}" alt="${alt}" loading="lazy" />
           </button>
         `;
@@ -3543,7 +3387,7 @@
         });
       });
 
-      // route cards: open the "primary" location of that route（双击）
+      // Route cards: double-click opens a sample location
       const routeFirstStop = {
         orientation: "cb",
         visitor: "ia",
@@ -3562,7 +3406,7 @@
         if (!activeId || !window.CampusTour) return;
         const tourView = document.getElementById("route-view-tour");
         if (tourView && tourView.hidden) {
-          window.alert("请先点击「自定义打卡路线」进入导览页（左侧仍为地图，右侧为路线草稿），再加入站点。");
+          window.alert('Open Custom check-in route first—the map stays on the left and the draft on the right—then add stops.');
           return;
         }
         window.CampusTour.addToDraft(activeId);
@@ -3571,7 +3415,7 @@
         if (!activeId || !window.CampusTour) return;
         const tourView = document.getElementById("route-view-tour");
         if (tourView && tourView.hidden) {
-          window.alert("请先点击「自定义打卡路线」进入导览页，再开始打卡。");
+          window.alert('Open Custom check-in route before starting check-in.');
           return;
         }
         window.CampusTour.addToDraft(activeId);
